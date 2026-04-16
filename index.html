@@ -3,7 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karyne Mignoni | KM Reforço Escolar</title>
+<title>Profª Karyne Mignoni | Aulas de Português, Reforço Escolar e Redação ENEM em Caxias do Sul</title>
+
+<!-- SEO Básico -->
+<meta name="description" content="Profª Karyne Mignoni oferece aulas particulares de Português, reforço escolar, redação ENEM e vestibular em Caxias do Sul - RS. Atendimento presencial e online para todo o Brasil.">
+<meta name="keywords" content="aulas de português Caxias do Sul, reforço escolar Caxias do Sul, redação ENEM, aulas particulares português, professora de português RS, KM reforço escolar, Karyne Mignoni">
+<meta name="author" content="Karyne Mignoni">
+<meta name="robots" content="index, follow">
+<meta name="language" content="pt-BR">
+<link rel="canonical" href="https://mraxlrose.github.io/profekaryne/">
+
+<!-- Open Graph (WhatsApp, Facebook, Instagram) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mraxlrose.github.io/profekaryne/">
+<meta property="og:title" content="Profª Karyne Mignoni | Aulas de Português e Redação ENEM">
+<meta property="og:description" content="Aulas particulares de Português, reforço escolar e redação ENEM em Caxias do Sul - RS. Método exclusivo com resultados comprovados. Atendimento online para todo o Brasil.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="KM Reforço Escolar">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Profª Karyne Mignoni | Aulas de Português e Redação ENEM">
+<meta name="twitter:description" content="Aulas particulares de Português, reforço escolar e redação ENEM em Caxias do Sul - RS. Atendimento online para todo o Brasil.">
+
+<!-- Geolocalização -->
+<meta name="geo.region" content="BR-RS">
+<meta name="geo.placename" content="Caxias do Sul, Rio Grande do Sul, Brasil">
+
+<!-- Schema.org (Google entende melhor o negócio) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "KM Reforço Escolar",
+  "description": "Aulas particulares de Português, reforço escolar e redação ENEM em Caxias do Sul - RS",
+  "url": "https://mraxlrose.github.io/profekaryne/",
+  "founder": {
+    "@type": "Person",
+    "name": "Karyne Mignoni",
+    "jobTitle": "Professora de Português",
+    "sameAs": "https://www.instagram.com/km.escutaeresultados/"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Caxias do Sul",
+    "addressRegion": "RS",
+    "addressCountry": "BR"
+  },
+  "telephone": "+55-54-91285-4260",
+  "sameAs": "https://www.instagram.com/km.escutaeresultados/",
+  "areaServed": "Brasil",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Ensino",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Aulas Particulares de Português"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Reforço Escolar"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Redação ENEM e Vestibular"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Aulas Online"}}
+    ]
+  }
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -77,6 +138,76 @@
     text-decoration: none !important;
   }
   .nav-cta:hover { background: var(--verde-claro) !important; }
+
+
+  /* JOGOS */
+  #jogos { background: white; }
+  .jogos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .jogo-card {
+    background: var(--creme);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(45,106,79,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; flex-direction: column;
+  }
+  .jogo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+  }
+  .jogo-thumb {
+    width: 100%; height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4rem; position: relative; overflow: hidden;
+  }
+  .jogo-badge {
+    position: absolute; top: 12px; right: 12px;
+    background: var(--dourado); color: white;
+    font-size: 0.72rem; font-weight: 500;
+    padding: 4px 10px; border-radius: 50px;
+  }
+  .jogo-body { padding: 1.2rem; flex: 1; display: flex; flex-direction: column; }
+  .jogo-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--texto);
+  }
+  .jogo-nivel {
+    font-size: 0.75rem; color: var(--verde); font-weight: 500;
+    margin-bottom: 0.6rem; display: flex; align-items: center; gap: 4px;
+  }
+  .jogo-body p {
+    font-size: 0.85rem; color: var(--texto-suave);
+    line-height: 1.6; flex: 1; margin-bottom: 1rem;
+  }
+  .jogo-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: auto; padding-top: 1rem;
+    border-top: 1px solid rgba(45,106,79,0.1);
+  }
+  .jogo-preco {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; color: var(--verde); font-weight: 700;
+  }
+  .jogo-preco span { font-size: 0.8rem; color: var(--texto-suave); font-family: 'DM Sans', sans-serif; display: block; font-weight: 400; }
+  .btn-comprar {
+    background: var(--verde); color: white;
+    padding: 9px 18px; border-radius: 50px;
+    text-decoration: none; font-size: 0.82rem; font-weight: 500;
+    transition: background 0.2s; white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-comprar:hover { background: var(--verde-claro); }
+  .jogos-info-box {
+    background: var(--verde-palido); border-radius: 20px;
+    padding: 1.5rem 2rem; margin-bottom: 3rem;
+    display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  }
+  .jogos-info-box p { font-size: 0.9rem; color: var(--verde); flex: 1; min-width: 200px; }
+  .jogos-info-box strong { display: block; font-size: 1rem; margin-bottom: 4px; }
 
   /* HERO */
   .hero {
@@ -479,6 +610,7 @@
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#horarios">Horários</a></li>
       <li><a href="#redacao">Redação</a></li>
+      <li><a href="#jogos">🎲 Jogos</a></li>
       <li><a href="#depoimentos">Depoimentos</a></li>
       <li><a href="#contato" class="nav-cta">Agendar aula</a></li>
     </ul>
@@ -764,6 +896,189 @@
           <a href="https://wa.me/5554912854260" class="btn-primary" style="display:inline-flex;font-size:0.88rem;">💬 Chamar no WhatsApp</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOGOS -->
+<section id="jogos">
+  <div class="container">
+    <span class="section-label">Loja de jogos digitais</span>
+    <h2 class="section-title">Jogos educativos de Português</h2>
+    <p class="section-sub">PDFs prontos para imprimir e usar em sala de aula ou em casa. Compra rápida via PIX e envio imediato pelo WhatsApp!</p>
+
+    <div class="jogos-info-box">
+      <span style="font-size:2rem;">📦</span>
+      <p><strong>Como funciona a compra?</strong>Clique em "Comprar", combine no WhatsApp, pague via PIX e receba o PDF na hora. Simples assim!</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <div style="text-align:center;"><span style="font-size:1.3rem;">💸</span><br><span style="font-size:0.78rem;color:var(--verde);font-weight:500;">Pagamento PIX</span></div>
+        <div style="text-align:center;"><span style="font-size:1.3rem;">📲</span><br><span style="font-size:0.78rem;color:var(--verde);font-weight:500;">Envio via WhatsApp</span></div>
+        <div style="text-align:center;"><span style="font-size:1.3rem;">🖨️</span><br><span style="font-size:0.78rem;color:var(--verde);font-weight:500;">Imprima em casa</span></div>
+      </div>
+    </div>
+
+    <div class="jogos-grid">
+
+      <div class="jogo-card">
+        <div class="jogo-thumb" style="background:linear-gradient(135deg,#D8F3DC,#52B788);">
+          🎯
+          <span class="jogo-badge">Gramática</span>
+        </div>
+        <div class="jogo-body">
+          <h3>Trilha das Classes Gramaticais</h3>
+          <div class="jogo-nivel">📚 Ensino Fundamental II · 3–6 jogadores</div>
+          <p>Jogo de tabuleiro onde os alunos avançam ao identificar corretamente substantivos, verbos, adjetivos e advérbios. Inclui 80 cartas de perguntas e manual completo.</p>
+          <div class="jogo-footer">
+            <div class="jogo-preco">R$ 10<span>PDF para imprimir</span></div>
+            <a href="https://wa.me/5554912854260?text=Ol%C3%A1!+Quero+comprar+o+jogo+%22Trilha+das+Classes+Gramaticais%22+por+R%24+10%2C00+%F0%9F%8E%AF" target="_blank" class="btn-comprar">🛒 Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="jogo-card">
+        <div class="jogo-thumb" style="background:linear-gradient(135deg,#FFF3CD,#F4D58D);">
+          🃏
+          <span class="jogo-badge">Vocabulário</span>
+        </div>
+        <div class="jogo-body">
+          <h3>Baralho da Acentuação</h3>
+          <div class="jogo-nivel">📚 Ensino Fundamental I e II · 2–4 jogadores</div>
+          <p>Cartas de baralho com palavras que precisam ser acentuadas corretamente. Quem acertar mais fica com as cartas. Inclui gabarito e regras de acentuação em resumo.</p>
+          <div class="jogo-footer">
+            <div class="jogo-preco">R$ 10<span>PDF para imprimir</span></div>
+            <a href="https://wa.me/5554912854260?text=Ol%C3%A1!+Quero+comprar+o+jogo+%22Baralho+da+Acentua%C3%A7%C3%A3o%22+por+R%24+10%2C00+%F0%9F%83%8F" target="_blank" class="btn-comprar">🛒 Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="jogo-card">
+        <div class="jogo-thumb" style="background:linear-gradient(135deg,#E6F1FB,#85B7EB);">
+          🧩
+          <span class="jogo-badge">Redação</span>
+        </div>
+        <div class="jogo-body">
+          <h3>Quebra-Cabeça do Parágrafo</h3>
+          <div class="jogo-nivel">📚 Ensino Médio · 1–3 jogadores</div>
+          <p>Peças com frases embaralhadas que formam parágrafos coesos quando organizadas corretamente. Desenvolve o raciocínio textual e a coesão. Excelente para preparação para o ENEM.</p>
+          <div class="jogo-footer">
+            <div class="jogo-preco">R$ 10<span>PDF para imprimir</span></div>
+            <a href="https://wa.me/5554912854260?text=Ol%C3%A1!+Quero+comprar+o+jogo+%22Quebra-Cabe%C3%A7a+do+Par%C3%A1grafo%22+por+R%24+10%2C00+%F0%9F%A7%A9" target="_blank" class="btn-comprar">🛒 Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="jogo-card">
+        <div class="jogo-thumb" style="background:linear-gradient(135deg,#FBEAF0,#ED93B1);">
+          📖
+          <span class="jogo-badge">Leitura</span>
+        </div>
+        <div class="jogo-body">
+          <h3>Bingo da Interpretação</h3>
+          <div class="jogo-nivel">📚 Ensino Fundamental I · 2–30 jogadores</div>
+          <p>Cartelas de bingo com trechos de texto e perguntas de interpretação. O professor lê a pergunta e os alunos marcam a resposta. Ideal para turmas grandes e aulas dinâmicas.</p>
+          <div class="jogo-footer">
+            <div class="jogo-preco">R$ 10<span>PDF para imprimir</span></div>
+            <a href="https://wa.me/5554912854260?text=Ol%C3%A1!+Quero+comprar+o+jogo+%22Bingo+da+Interpreta%C3%A7%C3%A3o%22+por+R%24+10%2C00+%F0%9F%93%96" target="_blank" class="btn-comprar">🛒 Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="jogo-card">
+        <div class="jogo-thumb" style="background:linear-gradient(135deg,#EAF3DE,#97C459);">
+          🎲
+          <span class="jogo-badge">Ortografia</span>
+        </div>
+        <div class="jogo-body">
+          <h3>Dado Ortográfico</h3>
+          <div class="jogo-nivel">📚 Ensino Fundamental I · 2–6 jogadores</div>
+          <p>Dados com sílabas que os alunos combinam para formar palavras corretas. Desafios de ortografia com S/Z, X/CH, G/J e mais. Inclui 6 dados temáticos e 60 fichas de desafio.</p>
+          <div class="jogo-footer">
+            <div class="jogo-preco">R$ 10<span>PDF para imprimir</span></div>
+            <a href="https://wa.me/5554912854260?text=Ol%C3%A1!+Quero+comprar+o+jogo+%22Dado+Ortogr%C3%A1fico%22+por+R%24+10%2C00+%F0%9F%8E%B2" target="_blank" class="btn-comprar">🛒 Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="jogo-card">
+        <div class="jogo-thumb" style="background:linear-gradient(135deg,#FAECE7,#F0997B);">
+          🏆
+          <span class="jogo-badge">ENEM</span>
+        </div>
+        <div class="jogo-body">
+          <h3>Quiz das Competências ENEM</h3>
+          <div class="jogo-nivel">📚 Ensino Médio · 2–4 jogadores</div>
+          <p>Quiz com 100 perguntas sobre as 5 competências da redação ENEM. Cartas com situações reais de redação onde o jogador deve identificar o erro ou acerto. Ótimo para revisão.</p>
+          <div class="jogo-footer">
+            <div class="jogo-preco">R$ 10<span>PDF para imprimir</span></div>
+            <a href="https://wa.me/5554912854260?text=Ol%C3%A1!+Quero+comprar+o+jogo+%22Quiz+das+Compet%C3%AAncias+ENEM%22+por+R%24+10%2C00+%F0%9F%8F%86" target="_blank" class="btn-comprar">🛒 Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="jogo-card">
+        <div class="jogo-thumb" style="background:linear-gradient(135deg,#EEEDFE,#AFA9EC);">
+          🔤
+          <span class="jogo-badge">Gramática</span>
+        </div>
+        <div class="jogo-body">
+          <h3>Dominó da Pontuação</h3>
+          <div class="jogo-nivel">📚 Ensino Fundamental II · 2–4 jogadores</div>
+          <p>Peças de dominó onde um lado tem uma frase incompleta e o outro tem o sinal de pontuação correto. Ensina o uso de vírgula, ponto e vírgula, dois-pontos e travessão de forma lúdica.</p>
+          <div class="jogo-footer">
+            <div class="jogo-preco">R$ 10<span>PDF para imprimir</span></div>
+            <a href="https://wa.me/5554912854260?text=Ol%C3%A1!+Quero+comprar+o+jogo+%22Domin%C3%B3+da+Pontua%C3%A7%C3%A3o%22+por+R%24+10%2C00+%F0%9F%94%A4" target="_blank" class="btn-comprar">🛒 Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="jogo-card">
+        <div class="jogo-thumb" style="background:linear-gradient(135deg,#D8F3DC,#2D6A4F);">
+          🎭
+          <span class="jogo-badge">Literatura</span>
+        </div>
+        <div class="jogo-body">
+          <h3>Memória dos Gêneros Textuais</h3>
+          <div class="jogo-nivel">📚 Ensino Fundamental II · 2–4 jogadores</div>
+          <p>Jogo da memória com pares de gêneros textuais: um lado com o nome (conto, crônica, poema, notícia...) e o outro com suas características. Ajuda na identificação e diferenciação.</p>
+          <div class="jogo-footer">
+            <div class="jogo-preco">R$ 10<span>PDF para imprimir</span></div>
+            <a href="https://wa.me/5554912854260?text=Ol%C3%A1!+Quero+comprar+o+jogo+%22Mem%C3%B3ria+dos+G%C3%AAneros+Textuais%22+por+R%24+10%2C00+%F0%9F%8E%AD" target="_blank" class="btn-comprar">🛒 Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="jogo-card">
+        <div class="jogo-thumb" style="background:linear-gradient(135deg,#FFF3CD,#C9A84C);">
+          📝
+          <span class="jogo-badge">Escrita</span>
+        </div>
+        <div class="jogo-body">
+          <h3>Cartas do Repertório Cultural</h3>
+          <div class="jogo-nivel">📚 Ensino Médio · 1–4 jogadores</div>
+          <p>Baralho com 60 cartas de repertório para redação ENEM: filósofos, dados estatísticos, leis, obras literárias e culturais. O jogador conecta o repertório ao tema sorteado.</p>
+          <div class="jogo-footer">
+            <div class="jogo-preco">R$ 10<span>PDF para imprimir</span></div>
+            <a href="https://wa.me/5554912854260?text=Ol%C3%A1!+Quero+comprar+o+jogo+%22Cartas+do+Repert%C3%B3rio+Cultural%22+por+R%24+10%2C00+%F0%9F%93%9D" target="_blank" class="btn-comprar">🛒 Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="jogo-card">
+        <div class="jogo-thumb" style="background:linear-gradient(135deg,#E6F1FB,#185FA5);">
+          🔍
+          <span class="jogo-badge">Vocabulário</span>
+        </div>
+        <div class="jogo-body">
+          <h3>Caça-Palavras Temático</h3>
+          <div class="jogo-nivel">📚 Todas as idades · Individual ou em grupo</div>
+          <p>Pacote com 10 caça-palavras temáticos: natureza, cidadania, tecnologia, cultura brasileira e mais. Cada um acompanha atividade de vocabulário e interpretação. Perfeito para reforço.</p>
+          <div class="jogo-footer">
+            <div class="jogo-preco">R$ 10<span>PDF para imprimir</span></div>
+            <a href="https://wa.me/5554912854260?text=Ol%C3%A1!+Quero+comprar+o+jogo+%22Ca%C3%A7a-Palavras+Tem%C3%A1tico%22+por+R%24+10%2C00+%F0%9F%94%8D" target="_blank" class="btn-comprar">🛒 Comprar</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
