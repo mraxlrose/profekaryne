@@ -294,7 +294,7 @@ section { padding: 5rem 2rem; }
   font-size: 2.2rem; margin-bottom: 1rem; color: var(--texto);
 }
 .section-sub {
-  color: var(--texto-suave); max-width: 540px; line-height: 1.8;
+  color: var(--texto-suave); max-width: 720px; line-height: 1.8;
   margin-bottom: 3rem;
 }
 
