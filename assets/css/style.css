@@ -165,6 +165,21 @@ nav {
   border: 1.5px solid var(--verde);
 }
 .btn-download:hover { background: var(--verde); color: var(--fundo-profundo); }
+.btn-hotmart {
+  background: #EE4B25; color: #fff;
+  padding: 9px 18px; border-radius: 50px;
+  text-decoration: none; font-size: 0.82rem; font-weight: 600;
+  transition: background 0.2s; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-hotmart:hover { background: #d03d1b; }
+.jogo-badge-hotmart {
+  position: absolute; top: 12px; right: 12px;
+  background: #EE4B25; color: #fff;
+  font-size: 0.72rem; font-weight: 700;
+  padding: 4px 10px; border-radius: 50px;
+  letter-spacing: 0.04em;
+}
 .jogo-card-gratis {
   border: 2px solid var(--verde);
   position: relative;
@@ -187,8 +202,8 @@ nav {
 
 /* HERO */
 .hero {
-  min-height: 100vh; display: flex; align-items: center;
-  padding: 4rem 2rem 4rem;
+  display: flex; align-items: center;
+  padding: 5rem 2rem;
   background: var(--creme);
   position: relative; overflow: hidden;
 }
@@ -282,7 +297,7 @@ nav {
 }
 
 /* SECTION COMMON */
-section { padding: 5rem 2rem; }
+section { padding: 4rem 2rem; }
 .container { max-width: 1100px; margin: 0 auto; }
 .section-label {
   display: inline-block;
@@ -295,7 +310,7 @@ section { padding: 5rem 2rem; }
 }
 .section-sub {
   color: var(--texto-suave); max-width: 720px; line-height: 1.8;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 /* SOBRE */
