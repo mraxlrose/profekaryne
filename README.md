@@ -1,56 +1,74 @@
-# KM Reforço Escolar — Profª Karyne Mignoni
+# KM Centro de Aprendizagem — Professora Karyne Mignoni
 
-Site profissional da Professora Karyne Mignoni, especialista em Língua Portuguesa, redação ENEM/vestibular e reforço escolar.
+Site profissional da Professora Karyne Mignoni — Neuropsicopedagoga, Psicanalista e especialista em Língua Portuguesa, com atendimentos presenciais e online em Caxias do Sul – RS.
 
 ## Sobre o projeto
 
-Site estático desenvolvido em HTML, CSS e JavaScript puro, sem dependências externas ou frameworks. Pode ser hospedado gratuitamente no GitHub Pages, Netlify ou Vercel.
+Site estático desenvolvido em HTML5, CSS3 e JavaScript puro, sem frameworks ou dependências externas. Estrutura organizada em arquivos separados para facilitar a manutenção.
 
-## Funcionalidades
+## Estrutura de arquivos
 
-- Apresentação profissional com foto e biografia
-- Seção de serviços: reforço escolar, aulas particulares, redação ENEM
-- Tabela de horários disponíveis
-- Metodologia exclusiva de redação
-- Depoimentos de alunos
-- Planos e valores
-- Formulário de contato integrado ao Formspree
-- Botão flutuante do WhatsApp
-- Design responsivo para mobile e desktop
+```
+profekaryne/
+├── index.html              # Página principal
+├── assets/
+│   ├── css/
+│   │   └── style.css       # Estilos (tema escuro navy + dourado)
+│   ├── js/
+│   │   └── main.js         # Validação do formulário + envio Formspree
+│   ├── img/
+│   │   ├── logo.png        # Logo KM Centro de Aprendizagem
+│   │   └── profekaryne.jpeg
+│   └── pdf/
+│       └── quiz-substantivos-missao-gramatica.pdf  # Jogo gratuito
+```
+
+## Seções do site
+
+- **Hero** — apresentação principal com badges e estatísticas
+- **Sobre** — quem é Karyne Mignoni, formação e diferenciais
+- **Serviços** — acompanhamento de aprendizagem, redação, psicanálise, orientação IC e avaliação diagnóstica gratuita
+- **Redação** — método exclusivo, etapas e diferenciais
+- **Horários** — disponibilidade de atendimento
+- **Planos e valores** — do R$ 50 ao R$ 280–380, organizados por valor crescente
+- **Jogos** — jogo gratuito para download + 3 jogos disponíveis na Hotmart
+- **Contato** — formulário, WhatsApp, e-mail e localização
 
 ## Tecnologias
 
-- HTML5
-- CSS3
-- JavaScript (vanilla)
-- [Formspree](https://formspree.io) — envio de formulário sem back-end
+- HTML5, CSS3, JavaScript (vanilla)
+- Google Fonts — Playfair Display + DM Sans
+- [Formspree](https://formspree.io) — envio do formulário sem back-end
+- [Hotmart](https://hotmart.com) — venda dos jogos educativos digitais
 
-## Como usar
+## Como rodar localmente
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/km-reforco-escolar.git
-   ```
-2. Abra o arquivo `professora-portugues.html` no navegador
+```bash
+# Abra direto no navegador, ou sirva com Python:
+python3 -m http.server 8080
+# Acesse: http://localhost:8080
+```
 
-3. Para ativar o formulário de contato:
-   - Crie uma conta gratuita em [formspree.io](https://formspree.io)
-   - Crie um novo formulário e copie o ID gerado
-   - No arquivo HTML, substitua `SEU_ID_AQUI` pelo seu ID
+Não há etapa de build, npm install ou compilação.
 
-## Hospedagem gratuita
+## Ativar o formulário de contato
 
-O site pode ser publicado gratuitamente em:
-- **Netlify** → arraste o arquivo HTML em [netlify.com](https://netlify.com)
-- **GitHub Pages** → ative nas configurações do repositório
-- **Vercel** → conecte o repositório em [vercel.com](https://vercel.com)
+1. Crie uma conta em [formspree.io](https://formspree.io)
+2. Crie um novo formulário e copie o ID gerado
+3. Em `assets/js/main.js`, substitua `SEU_ID_AQUI` pelo ID obtido
+
+## Hospedagem
+
+O site está publicado no GitHub Pages:
+**[mraxlrose.github.io/profekaryne](https://mraxlrose.github.io/profekaryne/)**
 
 ## Contato
 
+- WhatsApp: (54) 9 9128-5426
+- E-mail: km.centrodeaprendizagem@gmail.com
 - Instagram: [@km.escutaeresultados](https://www.instagram.com/km.escutaeresultados/)
-- WhatsApp: (54) 9 1285-4260
 - Localização: Caxias do Sul – RS
 
 ---
 
-© 2025 Profª Karyne Mignoni — KM Reforço Escolar
+© 2025 KM Centro de Aprendizagem — Professora Karyne Mignoni
