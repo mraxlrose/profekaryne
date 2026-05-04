@@ -60,7 +60,7 @@ Não há etapa de build, npm install ou compilação.
 ## Hospedagem
 
 O site está publicado no GitHub Pages:
-**[mraxlrose.github.io/profekaryne](https://mraxlrose.github.io/profekaryne/)**
+**[kmcentrodeaprendizagem.com.br](https://kmcentrodeaprendizagem.com.br/)**
 
 ## Contato
 
