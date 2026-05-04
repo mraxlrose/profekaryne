@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     errEl.style.display = 'none';
     const data = new FormData(this);
     try {
-      const res = await fetch('https://formspree.io/f/SEU_ID_AQUI', {
+      const res = await fetch('https://formspree.io/f/xdabgenj', {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }
