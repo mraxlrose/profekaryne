@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kmcentrodeaprendizagem.com.br/sitemap.xml
