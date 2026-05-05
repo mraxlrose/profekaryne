@@ -608,3 +608,20 @@ select option { background: var(--branco); color: var(--texto); }
   .nav-links li:not(:last-child) { display: none; }
   .nav-inner { padding: 8px 16px; }
 }
+
+/* PÁGINA OBRIGADO */
+.obrigado-box {
+  text-align: center;
+  max-width: 520px;
+  padding: 3rem 2rem;
+}
+.obrigado-icone { font-size: 4rem; margin-bottom: 1.5rem; }
+.obrigado-box h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; color: var(--texto); margin-bottom: 1rem;
+}
+.obrigado-box p {
+  color: var(--texto-suave); font-size: 1rem;
+  line-height: 1.8; margin-bottom: 2rem;
+}
+.obrigado-box .verde { color: var(--verde); }
