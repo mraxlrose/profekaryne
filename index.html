@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KM Centro de Aprendizagem | Professora Karyne Mignoni</title>
-<link rel="icon" type="image/png" href="assets/img/logo.png">
-<link rel="apple-touch-icon" href="assets/img/logo.png">
+<link rel="icon" type="image/png" href="assets/img/Logo Dourado.png">
+<link rel="apple-touch-icon" href="assets/img/Logo Dourado.png">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDRF710GRQ"></script>
@@ -80,7 +80,7 @@
 }
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=2">
+<link rel="stylesheet" href="assets/css/style.css?v=3">
 </head>
 <body>
 
@@ -94,7 +94,8 @@
 <nav>
   <div class="nav-inner">
     <a href="#inicio" class="nav-logo">
-      <img src="assets/img/logo.png" alt="KM Centro de Aprendizagem" class="nav-logo-img">
+      <img src="assets/img/Logo Dourado.png" alt="KM Centro de Aprendizagem" class="nav-logo-img logo-light">
+      <img src="assets/img/logo.png" alt="KM Centro de Aprendizagem" class="nav-logo-img logo-dark">
     </a>
     <ul class="nav-links">
       <li><a href="#sobre">Sobre</a></li>
@@ -106,6 +107,7 @@
       <li><a href="#jogos">🎲 Jogos</a></li>
       <li><a href="#contato" class="nav-cta">Agendar aula</a></li>
     </ul>
+    <button id="theme-toggle" title="Alternar tema" aria-label="Alternar tema">🌙</button>
   </div>
 </nav>
 
@@ -725,7 +727,7 @@
           <button type="submit" class="form-submit" id="submit-btn">📩 Enviar mensagem</button>
           <p id="form-error" style="display:none;color:#c0392b;font-size:0.85rem;margin-top:0.8rem;text-align:center;">Ops! Algo deu errado. Tente novamente ou chame no WhatsApp.</p>
         </form>
-        <script src="assets/js/main.js" defer></script>
+        <script src="assets/js/main.js?v=3" defer></script>
       </div>
       <div class="contato-info">
         <h3>Outros canais de atendimento</h3>
@@ -774,7 +776,8 @@
 
 <!-- FOOTER -->
 <footer>
-  <img src="assets/img/logo.png" alt="KM Centro de Aprendizagem" class="footer-logo-img">
+  <img src="assets/img/Logo Dourado.png" alt="KM Centro de Aprendizagem" class="footer-logo-img logo-light">
+  <img src="assets/img/logo.png" alt="KM Centro de Aprendizagem" class="footer-logo-img logo-dark">
   <p>KM Centro de Aprendizagem · Caxias do Sul, RS · Atendimento online para todo o Brasil</p>
   <nav>
     <a href="#inicio">Início</a>
@@ -786,4 +789,20 @@
   <p style="margin-top:1.5rem;font-size:0.75rem;opacity:0.5;">© 2025 Profª Karyne Mignoni · KM Centro de Aprendizagem · Todos os direitos reservados</p>
 </footer>
 
-<!-- WH
+<script>
+(function() {
+  var btn = document.getElementById('theme-toggle');
+  var saved = localStorage.getItem('km-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+  btn.textContent = saved === 'dark' ? '☀️' : '🌙';
+  btn.addEventListener('click', function() {
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('km-theme', next);
+    btn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+})();
+</script>
+</body>
+</html>
