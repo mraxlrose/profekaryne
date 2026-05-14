@@ -21,6 +21,8 @@ body {
 }
 p, li, .section-sub, .hero-sub, .valor-lista li, .sobre-lista li,
 .step p, .redacao-steps p, .tooltip-box { text-align: justify; }
+#valores p, #valores li, #valores .section-sub { text-align: left; }
+#servicos .section-sub { text-align: left; text-wrap: pretty; }
 
 /* TOPBAR */
 .topbar {
@@ -313,7 +315,7 @@ section { padding: 4rem 2rem; }
   font-size: 2.2rem; margin-bottom: 1rem; color: var(--texto);
 }
 .section-sub {
-  color: var(--texto-suave); max-width: 720px; line-height: 1.8;
+  color: var(--texto-suave); line-height: 1.8;
   margin-bottom: 2rem;
 }
 
