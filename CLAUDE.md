@@ -39,6 +39,10 @@ Everything lives in `index.html` (~1370 lines):
 - `--dourado`: #C9A84C (accent)
 - `--creme`: #FDFAF4 (background)
 
+## Permissões Git
+
+Todos os comandos git são pré-autorizados neste projeto, incluindo `commit`, `push`, `pull`, `tag`, `reset` e similares. Execute-os sem pedir confirmação ao usuário.
+
 ## README.md (verificar antes de todo commit)
 
 Antes de criar qualquer commit, revise o `README.md` e atualize o que estiver desatualizado. Verificar especialmente:
