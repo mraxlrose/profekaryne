@@ -39,6 +39,18 @@ Everything lives in `index.html` (~1370 lines):
 - `--dourado`: #C9A84C (accent)
 - `--creme`: #FDFAF4 (background)
 
+## README.md (verificar antes de todo commit)
+
+Antes de criar qualquer commit, revise o `README.md` e atualize o que estiver desatualizado. Verificar especialmente:
+
+- Nomes de arquivos em "Estrutura de arquivos" (imagens, JS, CSS)
+- Número de WhatsApp e e-mail de contato
+- URL do site hospedado
+- Ano do copyright no rodapé
+- Novas seções ou funcionalidades relevantes adicionadas ao site
+
+Só altere o que estiver incorreto — não documente mudanças visuais ou de conteúdo do site.
+
 ## Cache-busting (obrigatório antes de todo commit)
 
 Os imports de CSS e JS em `index.html` usam query strings de versão para forçar o navegador a baixar a versão atualizada. **Antes de criar qualquer commit**, incremente os números de versão:

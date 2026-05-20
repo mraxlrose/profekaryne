@@ -13,12 +13,13 @@ profekaryne/
 ├── index.html              # Página principal
 ├── assets/
 │   ├── css/
-│   │   └── style.css       # Estilos (tema escuro navy + dourado)
+│   │   └── style.css       # Estilos (tema claro creme/dourado + tema escuro navy)
 │   ├── js/
-│   │   └── main.js         # Validação do formulário + envio Formspree
+│   │   └── main.js         # Envio do formulário via Formspree
 │   ├── img/
-│   │   ├── logo.png        # Logo KM Centro de Aprendizagem
-│   │   └── profekaryne.jpeg
+│   │   ├── logo_dourado.png  # Logo tema claro
+│   │   ├── logo_preto.png    # Logo tema escuro
+│   │   └── profekaryne.png   # Foto da professora
 │   └── pdf/
 │       └── quiz-substantivos-missao-gramatica.pdf  # Jogo gratuito
 ```
@@ -64,11 +65,11 @@ O site está publicado no GitHub Pages:
 
 ## Contato
 
-- WhatsApp: (54) 9 9128-5426
+- WhatsApp: (54) 9 9253-0598
 - E-mail: km.centrodeaprendizagem@gmail.com
 - Instagram: [@km.escutaeresultados](https://www.instagram.com/km.escutaeresultados/)
 - Localização: Caxias do Sul – RS
 
 ---
 
-© 2025 KM Centro de Aprendizagem — Professora Karyne Mignoni
+© 2026 KM Centro de Aprendizagem — Professora Karyne Mignoni

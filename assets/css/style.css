@@ -625,6 +625,7 @@ select option { background: var(--branco); color: var(--texto); }
 .nav-actions {
   display: flex; align-items: center; gap: 8px; flex-shrink: 0;
 }
+.nav-cta-mobile { display: none !important; }
 #nav-toggle {
   display: none;
   background: none; border: none; cursor: pointer;
@@ -665,11 +666,12 @@ nav.open #nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
     border-bottom: 1px solid rgba(201,168,76,0.1);
     white-space: normal;
   }
-  .nav-actions .nav-cta {
+  .nav-cta-mobile {
+    display: inline-flex !important;
     padding: 6px 14px !important;
     font-size: 0.78rem !important;
   }
-  .nav-actions .nav-cta-sub {
+  .nav-cta-mobile .nav-cta-sub {
     font-size: 0.62rem;
   }
 }
