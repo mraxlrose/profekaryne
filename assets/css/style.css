@@ -666,8 +666,11 @@ nav.open #nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
     border-bottom: 1px solid rgba(201,168,76,0.1);
     white-space: normal;
   }
+  .nav-links .nav-cta { display: none !important; }
   .nav-cta-mobile {
     display: inline-flex !important;
+    flex: 1;
+    justify-content: center !important;
     padding: 6px 14px !important;
     font-size: 0.78rem !important;
   }
