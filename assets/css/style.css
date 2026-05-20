@@ -665,14 +665,12 @@ nav.open #nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
     border-bottom: 1px solid rgba(201,168,76,0.1);
     white-space: normal;
   }
-  .nav-links .nav-cta {
-    margin: 12px 16px !important;
-    display: flex !important;
-    width: calc(100% - 32px) !important;
-    text-align: center !important;
-    justify-content: center !important;
-    border-radius: 50px !important;
-    border-bottom: none !important;
+  .nav-actions .nav-cta {
+    padding: 6px 14px !important;
+    font-size: 0.78rem !important;
+  }
+  .nav-actions .nav-cta-sub {
+    font-size: 0.62rem;
   }
 }
 

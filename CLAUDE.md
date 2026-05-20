@@ -39,6 +39,15 @@ Everything lives in `index.html` (~1370 lines):
 - `--dourado`: #C9A84C (accent)
 - `--creme`: #FDFAF4 (background)
 
+## Cache-busting (obrigatório antes de todo commit)
+
+Os imports de CSS e JS em `index.html` usam query strings de versão para forçar o navegador a baixar a versão atualizada. **Antes de criar qualquer commit**, incremente os números de versão:
+
+- `assets/css/style.css?v=N` — linha 83
+- `assets/js/main.js?v=N` — linha 751
+
+Exemplo: se estava `?v=4`, mude para `?v=5`. Faça isso mesmo que o CSS ou JS não tenham sido alterados — o que importa é que o HTML mudou e o navegador precisa revalidar os assets.
+
 ## Deployment
 
 The site is hosted on GitHub Pages at `https://mraxlrose.github.io/profekaryne/`. The canonical URL and Open Graph URLs reference this address — update them if the hosting location changes.
