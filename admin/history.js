@@ -117,14 +117,13 @@
     var artigo = document.createElement('article'); artigo.className = 'commit';
     artigo.innerHTML = '<div class="commit-header"><h2>' + escapar(dados.message.split('\n')[0]) + '</h2><span class="meta">' + dataLocal(dados.author.date) + '</span></div>' +
       '<div class="meta">Por ' + escapar(dados.author.name) + ' · código ' + escapar(commit.sha.slice(0, 7)) + '</div>' +
-      '<button type="button">Ver detalhes</button><div class="details" hidden></div>' +
-      '<a class="external" href="' + escapar(commit.html_url) + '" target="_blank" rel="noopener">Abrir no GitHub ↗</a>';
+      '<button type="button">Ver detalhes</button><div class="details" hidden></div>';
     artigo.querySelector('button').addEventListener('click', function () { mostrarDetalhes(this, commit); });
     if (usuario && commit.author && commit.author.login === usuario.login) {
       var restaurar = document.createElement('button'); restaurar.type = 'button';
       restaurar.className = 'restore'; restaurar.textContent = 'Restaurar conteúdo desta versão';
       restaurar.addEventListener('click', function () { restaurarConteudo(this, commit); });
-      artigo.insertBefore(restaurar, artigo.querySelector('.external'));
+      artigo.querySelector('.details').before(restaurar);
     }
     return artigo;
   }
