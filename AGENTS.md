@@ -155,11 +155,7 @@ O `CNAME` é essencial para o domínio próprio no GitHub Pages: não remover ou
 
 Antes de publicar qualquer alteração relacionada, revisar estes pontos:
 
-- `obrigado.html` aponta o favicon para `assets/img/logo.png`, arquivo inexistente. Os arquivos existentes são `logo_dourado.png` e `logo_preto.png`.
-- O JSON-LD em `index.html` contém o telefone `+55-54-991285426`, enquanto os links de WhatsApp e o contato exibido usam `(54) 9 9253-0598`. Confirmar o número correto antes de modificar SEO, contatos ou botões.
-- `README.md` descreve corretamente a estrutura geral, mas a seção de ativação do Formspree menciona `SEU_ID_AQUI`; o código já utiliza o endpoint real `xdabgenj`.
 - `CLAUDE.md` está desatualizado: afirma que CSS/JS são inline, traz paleta, URLs, telefone, Formspree e hospedagem antigos. Não usá-lo como fonte de verdade sem validação contra os arquivos atuais.
-- `comprovantes/` aparece como não rastreado no Git. É material local e não integra o site até que alguém o adicione explicitamente.
 
 ## Processo de trabalho recomendado
 

@@ -1,69 +1,26 @@
-# CLAUDE.md
+# Instruções do projeto
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Consulte primeiro `AGENTS.md`, que é a fonte de verdade atual deste repositório.
 
-## Project Overview
+## Resumo
 
-Professional website for Profª Karyne Mignoni (KM Reforço Escolar) — a Portuguese language tutor based in Caxias do Sul, RS. The site is a **single self-contained HTML file** (`index.html`) with all CSS and JavaScript embedded inline. No build system, package manager, or external dependencies.
+Site estático da Professora Karyne Mignoni, publicado em `https://kmcentrodeaprendizagem.com.br/` pelo GitHub Pages na branch `main`.
 
-## Running the Site
+- Página e estrutura: `index.html`
+- Estilos: `assets/css/style.css`
+- Formulário: `assets/js/main.js` (Formspree já configurado)
+- Conteúdo editável: `content/` e painel em `/admin/`
+- Autenticação do painel: Cloudflare Worker em `cloudflare-worker/`; segredos permanecem somente no Cloudflare
 
-Open `index.html` directly in a browser, or serve it with any static file server:
+Não existe etapa de build. Para testar localmente:
 
 ```bash
 python3 -m http.server 8080
-# then open http://localhost:8080
 ```
 
-There is no build step, no `npm install`, and no compilation required.
+## Dados importantes
 
-## Architecture
-
-Everything lives in `index.html` (~1370 lines):
-
-- **Lines 1–68**: `<head>` — SEO meta tags, Schema.org JSON-LD structured data, Google Fonts import
-- **Lines 69–640**: Embedded `<style>` block — all CSS, including CSS custom properties (color palette defined in `:root`), responsive media queries, and section-specific styles
-- **Lines 641–1285**: HTML body with these sections (by `id`): `inicio` (hero/nav), `sobre`, `servicos`, `horarios`, `redacao`, `jogos`, `depoimentos`, `valores`, `contato`, and `<footer>`
-- **Lines 1286–1313**: Inline `<script>` — async Formspree contact form submission handler
-
-## Key Integration Points
-
-**Formspree contact form**: The form posts to `https://formspree.io/f/SEU_ID_AQUI`. Replace `SEU_ID_AQUI` with the actual Formspree form ID to activate email delivery.
-
-**WhatsApp links**: Purchase buttons in the `#jogos` section and the floating WhatsApp button use `wa.me/5554912854260` with pre-filled URL-encoded messages. When adding new game cards, follow the same pattern.
-
-**Color palette** (CSS custom properties):
-- `--verde`: #2D6A4F (primary brand green)
-- `--verde-claro`: #52B788
-- `--verde-palido`: #D8F3DC
-- `--dourado`: #C9A84C (accent)
-- `--creme`: #FDFAF4 (background)
-
-## Permissões Git
-
-Todos os comandos git são pré-autorizados neste projeto, incluindo `commit`, `push`, `pull`, `tag`, `reset` e similares. Execute-os sem pedir confirmação ao usuário.
-
-## README.md (verificar antes de todo commit)
-
-Antes de criar qualquer commit, revise o `README.md` e atualize o que estiver desatualizado. Verificar especialmente:
-
-- Nomes de arquivos em "Estrutura de arquivos" (imagens, JS, CSS)
-- Número de WhatsApp e e-mail de contato
-- URL do site hospedado
-- Ano do copyright no rodapé
-- Novas seções ou funcionalidades relevantes adicionadas ao site
-
-Só altere o que estiver incorreto — não documente mudanças visuais ou de conteúdo do site.
-
-## Cache-busting (obrigatório antes de todo commit)
-
-Os imports de CSS e JS em `index.html` usam query strings de versão para forçar o navegador a baixar a versão atualizada. **Antes de criar qualquer commit**, incremente os números de versão:
-
-- `assets/css/style.css?v=N` — linha 83
-- `assets/js/main.js?v=N` — linha 751
-
-Exemplo: se estava `?v=4`, mude para `?v=5`. Faça isso mesmo que o CSS ou JS não tenham sido alterados — o que importa é que o HTML mudou e o navegador precisa revalidar os assets.
-
-## Deployment
-
-The site is hosted on GitHub Pages at `https://mraxlrose.github.io/profekaryne/`. The canonical URL and Open Graph URLs reference this address — update them if the hosting location changes.
+- WhatsApp: `(54) 9 9253-0598` / `5554992530598`
+- E-mail: `km.centrodeaprendizagem@gmail.com`
+- Não modificar `CNAME`, endpoint do Formspree ou segredos de autenticação sem confirmação.
+- `comprovantes/` é privado e ignorado pelo Git.

@@ -69,11 +69,9 @@ O painel salva as alterações no arquivo `content/site.json` do GitHub; em segu
 
 Nunca coloque o Client Secret do GitHub ou qualquer token neste repositório.
 
-## Ativar o formulário de contato
+## Formulário de contato
 
-1. Crie uma conta em [formspree.io](https://formspree.io)
-2. Crie um novo formulário e copie o ID gerado
-3. Em `assets/js/main.js`, substitua `SEU_ID_AQUI` pelo ID obtido
+O formulário já está ativo via [Formspree](https://formspree.io), usando o endpoint configurado em `assets/js/main.js`. Não altere esse endereço sem criar e testar outro formulário no Formspree.
 
 ## Hospedagem
 
