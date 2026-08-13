@@ -1,6 +1,6 @@
 {
   "hero": {
-    "selo": "KM Centro de Aprendizagem",
+    "selo": "KM Centro de Aprendizagem teste",
     "titulo": "Aprendizagem com método,",
     "destaque": "clareza",
     "complemento": "e propósito",
@@ -22,13 +22,34 @@
     "titulo": "Serviços disponíveis",
     "descricao": "Cada atendimento é pensado para o momento e objetivo do estudante, com planos flexíveis e acompanhamento contínuo. O acompanhamento integra ensino estruturado e trabalho de desbloqueio emocional.",
     "itens": [
-      { "titulo": "Redação ENEM & Vestibular", "descricao": "Método completo para dominar a dissertação argumentativa: estrutura, repertório, coesão, proposta de intervenção e desbloqueio emocional para evolução da escrita. Do básico à nota 1000." },
-      { "titulo": "Reforço Escolar", "descricao": "Apoio pedagógico para estudantes do Ensino Fundamental I, II e Médio, alinhado ao currículo escolar com atenção às dificuldades de aprendizagem e ao desenvolvimento emocional." },
-      { "titulo": "Aulas Particulares", "descricao": "Conteúdo 100% personalizado conforme a necessidade do aluno — gramática, interpretação de texto ou produção textual." },
-      { "titulo": "Escrita Profissional", "descricao": "Para adultos que precisam melhorar a comunicação oral e escrita no trabalho." },
-      { "titulo": "Psicanálise", "descricao": "Atendimentos em psicanálise com escuta ativa, auxiliando no fortalecimento emocional e na organização do pensamento para evolução na aprendizagem e na vida." },
-      { "titulo": "Projetos de Iniciação Científica", "descricao": "Acompanhamento online na elaboração de projetos de iniciação científica do Ensino Fundamental e Médio: tema, problema, objetivos, metodologia e cronograma." },
-      { "titulo": "Aulas Online", "descricao": "Toda a qualidade das aulas presenciais no ambiente virtual. Plataforma interativa e material digital." }
+      {
+        "titulo": "Redação ENEM & Vestibular",
+        "descricao": "Método completo para dominar a dissertação argumentativa: estrutura, repertório, coesão, proposta de intervenção e desbloqueio emocional para evolução da escrita. Do básico à nota 1000."
+      },
+      {
+        "titulo": "Reforço Escolar",
+        "descricao": "Apoio pedagógico para estudantes do Ensino Fundamental I, II e Médio, alinhado ao currículo escolar com atenção às dificuldades de aprendizagem e ao desenvolvimento emocional."
+      },
+      {
+        "titulo": "Aulas Particulares",
+        "descricao": "Conteúdo 100% personalizado conforme a necessidade do aluno — gramática, interpretação de texto ou produção textual."
+      },
+      {
+        "titulo": "Escrita Profissional",
+        "descricao": "Para adultos que precisam melhorar a comunicação oral e escrita no trabalho."
+      },
+      {
+        "titulo": "Psicanálise",
+        "descricao": "Atendimentos em psicanálise com escuta ativa, auxiliando no fortalecimento emocional e na organização do pensamento para evolução na aprendizagem e na vida."
+      },
+      {
+        "titulo": "Projetos de Iniciação Científica",
+        "descricao": "Acompanhamento online na elaboração de projetos de iniciação científica do Ensino Fundamental e Médio: tema, problema, objetivos, metodologia e cronograma."
+      },
+      {
+        "titulo": "Aulas Online",
+        "descricao": "Toda a qualidade das aulas presenciais no ambiente virtual. Plataforma interativa e material digital."
+      }
     ]
   },
   "redacao": {
