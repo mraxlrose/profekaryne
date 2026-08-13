@@ -7,6 +7,10 @@ backend:
 
 publish_mode: simple
 
+# Necessário ao Decap CMS; imagens enviadas pelo painel ficam nesta pasta.
+media_folder: assets/img/uploads
+public_folder: /assets/img/uploads
+
 collections:
   - name: site
     label: Textos do site
