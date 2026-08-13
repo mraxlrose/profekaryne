@@ -1,14 +1,17 @@
 const githubAuthorizeUrl = 'https://github.com/login/oauth/authorize';
 const githubTokenUrl = 'https://github.com/login/oauth/access_token';
 
-function htmlMensagem(status, conteudo, origem) {
+function htmlMensagem(status, conteudo) {
   const mensagem = `authorization:github:${status}:${JSON.stringify(conteudo)}`;
   return `<!doctype html><html><body><script>
-    (function () {
-      if (window.opener) window.opener.postMessage(${JSON.stringify(mensagem)}, ${JSON.stringify(origem)});
+    const responder = (evento) => {
+      if (window.opener) window.opener.postMessage(${JSON.stringify(mensagem)}, evento.origin);
+      window.removeEventListener('message', responder, false);
       window.close();
-    })();
-  </script><p>Você já pode fechar esta janela.</p></body></html>`;
+    };
+    window.addEventListener('message', responder, false);
+    if (window.opener) window.opener.postMessage('authorizing:github', '*');
+  </script><p>Concluindo login...</p></body></html>`;
 }
 
 function base64url(bytes) {
@@ -57,7 +60,7 @@ export default {
       const state = url.searchParams.get('state');
       const erro = url.searchParams.get('error');
       if (erro || !(await stateValido(state, env.STATE_SECRET))) {
-        return new Response(htmlMensagem('error', { error: erro || 'state inválido', provider: 'github' }, origem), { headers: { 'content-type': 'text/html; charset=utf-8' } });
+        return new Response(htmlMensagem('error', { error: erro || 'state inválido', provider: 'github' }), { headers: { 'content-type': 'text/html; charset=utf-8' } });
       }
       const resposta = await fetch(githubTokenUrl, {
         method: 'POST',
@@ -67,7 +70,7 @@ export default {
       const dados = await resposta.json();
       const status = dados.access_token ? 'success' : 'error';
       const corpo = dados.access_token ? { token: dados.access_token, provider: 'github' } : { error: dados.error || 'falha ao autenticar', provider: 'github' };
-      return new Response(htmlMensagem(status, corpo, origem), { headers: { 'content-type': 'text/html; charset=utf-8' } });
+      return new Response(htmlMensagem(status, corpo), { headers: { 'content-type': 'text/html; charset=utf-8' } });
     }
     return new Response('Não encontrado.', { status: 404 });
   }
