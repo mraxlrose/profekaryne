@@ -39,7 +39,30 @@
     }
   }
 
+  function secaoDaEntrada(entry) {
+    var caminho = entry.get('path') || '';
+    if (caminho.indexOf('agenda.json') !== -1) return 'horarios';
+    if (caminho.indexOf('contatos.json') !== -1) return 'contato';
+    if (caminho.indexOf('marca.json') !== -1) return 'inicio';
+    if (caminho.indexOf('valores.json') !== -1) return 'valores';
+    if (caminho.indexOf('jogos.json') !== -1) return 'jogos';
+    return 'inicio';
+  }
+
+  var atalhosDasSecoes = [
+    ['Início', 'inicio'], ['Sobre', 'sobre'], ['Serviços', 'servicos'],
+    ['Redação', 'redacao'], ['Horários', 'horarios'], ['Valores', 'valores'],
+    ['Jogos', 'jogos'], ['Contato', 'contato']
+  ];
+
   var CopiaDoSite = createClass({
+    irPara: function (secao) {
+      this.secao = secao;
+      if (this.quadro && this.quadro.contentWindow) {
+        this.quadro.contentWindow.location.hash = secao;
+      }
+      this.forceUpdate();
+    },
     aplicar: function () {
       if (!this.quadro || !this.quadro.contentDocument) return;
       try {
@@ -52,14 +75,28 @@
     componentDidUpdate: function () { this.aplicar(); },
     render: function () {
       var self = this;
+      var caminho = this.props.entry.get('path') || '';
+      var conteudoPrincipal = caminho.indexOf('site.json') !== -1;
+      var secao = this.secao || secaoDaEntrada(this.props.entry);
+      var titulo = conteudoPrincipal
+        ? 'Prévia do site — escolha abaixo a seção que deseja visualizar.'
+        : 'Prévia do site — aberta diretamente na seção correspondente à sua edição.';
       return h('div', { style: { height: '100vh', background: '#e8edf1', padding: '12px', boxSizing: 'border-box' } },
-        h('div', { style: { color: '#34495e', fontFamily: 'Arial, sans-serif', fontSize: '13px', margin: '0 0 10px' } }, 'Prévia do site — as alterações abaixo ainda não foram publicadas.'),
+        h('div', { style: { color: '#34495e', fontFamily: 'Arial, sans-serif', fontSize: '13px', margin: '0 0 8px' } }, titulo),
+        conteudoPrincipal ? h('div', { style: { display: 'flex', flexWrap: 'wrap', gap: '6px', margin: '0 0 10px' } },
+          atalhosDasSecoes.map(function (atalho) {
+            return h('button', {
+              key: atalho[1], type: 'button', onClick: function () { self.irPara(atalho[1]); },
+              style: { border: '1px solid #9aacba', borderRadius: '4px', padding: '4px 8px', cursor: 'pointer', background: secao === atalho[1] ? '#2f80c9' : '#fff', color: secao === atalho[1] ? '#fff' : '#34495e' }
+            }, atalho[0]);
+          })
+        ) : null,
         h('iframe', {
-          src: '/',
+          src: '/#' + secao,
           title: 'Prévia do site KM Centro de Aprendizagem',
           ref: function (elemento) { self.quadro = elemento; },
           onLoad: function () { self.aplicar(); setTimeout(function () { self.aplicar(); }, 300); },
-          style: { width: '100%', height: 'calc(100% - 28px)', border: '1px solid #b8c4cc', background: '#fff', boxShadow: '0 3px 14px rgba(0,0,0,.18)' }
+          style: { width: '100%', height: conteudoPrincipal ? 'calc(100% - 68px)' : 'calc(100% - 28px)', border: '1px solid #b8c4cc', background: '#fff', boxShadow: '0 3px 14px rgba(0,0,0,.18)' }
         })
       );
     }

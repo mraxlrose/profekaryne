@@ -7,9 +7,17 @@
     <style>
       /* GitHub Pages não gera deploy previews; a prévia útil é o ícone de olho. */
       [data-test-id="preview-link"], [data-testid="preview-link"] { display: none !important; }
+      .km-history-link {
+        position: fixed; top: 10px; right: 74px; z-index: 10000;
+        padding: 8px 12px; border-radius: 5px; background: #fff; color: #2469a8;
+        font: 600 14px Arial, sans-serif; text-decoration: none;
+        border: 1px solid #c8d4df; box-shadow: 0 1px 3px rgba(0,0,0,.12);
+      }
+      .km-history-link:hover { background: #edf6fc; }
     </style>
   </head>
   <body>
+    <a class="km-history-link" href="history.html" title="Ver as alterações já publicadas">Histórico</a>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script src="preview.js"></script>
     <script>

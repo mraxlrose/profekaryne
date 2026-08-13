@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Histórico de alterações — KM Centro de Aprendizagem</title>
+    <style>
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #f3f6f8; color: #203447; font: 16px/1.5 Arial, sans-serif; }
+      header { background: #fff; border-bottom: 1px solid #d9e2e9; padding: 16px 24px; display: flex; align-items: center; gap: 16px; }
+      header a { color: #2469a8; text-decoration: none; font-weight: 700; }
+      h1 { font-size: 22px; margin: 0; }
+      main { max-width: 980px; margin: 28px auto; padding: 0 20px 40px; }
+      .intro { margin: 0 0 20px; color: #526779; }
+      .status { padding: 18px; text-align: center; color: #526779; }
+      .commit { background: #fff; border: 1px solid #d9e2e9; border-radius: 8px; padding: 18px; margin: 12px 0; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+      .commit-header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+      .commit h2 { font-size: 17px; margin: 0; }
+      .meta { color: #687d8e; font-size: 14px; }
+      .files { margin: 12px 0 0; padding-left: 20px; color: #40586b; font-size: 14px; }
+      button { margin-top: 12px; padding: 8px 12px; border: 0; border-radius: 5px; background: #2469a8; color: #fff; cursor: pointer; font: inherit; }
+      button:hover { background: #185887; }
+      .details { margin-top: 16px; border-top: 1px solid #e1e8ed; padding-top: 14px; }
+      .file { margin: 14px 0; border: 1px solid #dde6ec; border-radius: 6px; overflow: hidden; }
+      .file-title { padding: 9px 12px; background: #f6f8fa; font-size: 14px; font-weight: 700; }
+      .file-title small { float: right; color: #687d8e; font-weight: 400; }
+      .changes { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #dde6ec; }
+      .change { min-width: 0; background: #fff; }
+      .change h3 { margin: 0; padding: 7px 10px; font-size: 13px; }
+      .before h3 { background: #fff0f0; color: #9f2f2f; }
+      .after h3 { background: #ecfaef; color: #23733c; }
+      pre { margin: 0; max-height: 260px; overflow: auto; padding: 10px; white-space: pre-wrap; overflow-wrap: anywhere; font: 12px/1.45 ui-monospace, SFMono-Regular, Consolas, monospace; }
+      .before pre { color: #8e3030; } .after pre { color: #1e6c38; }
+      .external { display: inline-block; margin-top: 12px; color: #2469a8; font-size: 14px; }
+      @media (max-width: 650px) { header { padding: 14px; } main { margin-top: 18px; padding: 0 12px 30px; } .changes { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <header><a href="./">← Voltar ao painel</a><h1>Histórico de alterações</h1></header>
+    <main>
+      <p class="intro">Aqui aparecem as alterações já publicadas no site. Abra um registro para comparar os trechos que estavam antes com os novos.</p>
+      <div id="history" class="status">Carregando histórico…</div>
+    </main>
+    <script src="history.js"></script>
+  </body>
+</html>

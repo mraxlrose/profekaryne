@@ -56,7 +56,7 @@ e acessar `http://localhost:8080`.
 │   └── pdf/
 │       └── quiz-substantivos-missao-gramatica.pdf # Jogo gratuito para download
 ├── content/site.json                             # Textos administráveis pelo painel
-├── admin/                                        # Interface e configuração do Decap CMS
+├── admin/                                        # Interface/configuração do Decap CMS e histórico de alterações
 ├── cloudflare-worker/                             # Código do OAuth; segredos ficam apenas no Cloudflare
 └── comprovantes/                                 # Arquivos locais não rastreados pelo Git; não publicar sem pedido explícito
 ```
@@ -123,6 +123,8 @@ Não substituir o endpoint ou mudar os nomes dos campos (`nome`, `email`, `telef
 O painel em `admin/` usa Decap CMS e permite que a editora modifique os textos principais do site em campos amigáveis, sem abrir o VS Code. Os dados ficam em `content/site.json`; `assets/js/content.js` os busca e substitui no HTML os elementos marcados com `data-content`. O texto que permanece no `index.html` é um fallback para falhas de carregamento.
 
 O CMS ainda registra uma alteração no GitHub por trás do painel, pois o GitHub Pages precisa receber os arquivos atualizados — mas a editora não precisa criar o commit manualmente. Para o login no CMS funcionar, `admin/config.yml` precisa apontar para o Worker Cloudflare publicado; o código e o procedimento estão em `cloudflare-worker/`. Nunca commitar ou exibir `GITHUB_CLIENT_SECRET`, tokens ou `STATE_SECRET`.
+
+O botão **Histórico** no topo do painel abre `admin/history.html`. Ele consulta a API pública do GitHub para listar os commits publicados e permite comparar, por arquivo, os trechos removidos ("Estava assim") e adicionados ("Ficou assim").
 
 `admin/preview.js` registra uma prévia customizada no Decap CMS para o arquivo `conteudo-principal`. Ela carrega uma cópia navegável da página inicial em um iframe e aplica os textos ainda não publicados; continua recomendável testar a versão publicada também em desktop/mobile.
 
