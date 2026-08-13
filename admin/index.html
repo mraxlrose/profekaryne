@@ -18,6 +18,9 @@
       .km-panel-actions a:hover, .km-panel-actions button:hover { background: #edf6fc; cursor: pointer; }
       .km-publish-status { position: fixed; right: 12px; bottom: 12px; z-index: 10000; max-width: 310px; padding: 9px 12px; border-radius: 5px; background: #203447; color: #fff; font: 13px Arial, sans-serif; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
       .km-publish-status.ok { background: #236f46; } .km-publish-status.wait { background: #9a6511; }
+      .km-validation-summary { position: fixed; top: 62px; right: 12px; z-index: 10000; max-width: 330px; padding: 10px 12px; border-radius: 5px; background: #b42318; color: #fff; font: 13px/1.4 Arial, sans-serif; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+      .km-invalid { border: 2px solid #d92d20 !important; background: #fff6f5 !important; }
+      .km-field-error { margin-top: 5px; color: #b42318; font: 12px Arial, sans-serif; }
     </style>
   </head>
   <body>
@@ -27,9 +30,11 @@
       <button id="km-backup" type="button" title="Baixar uma cópia dos textos atuais">Baixar backup</button>
     </nav>
     <div id="km-publish-status" class="km-publish-status">Verificando publicação…</div>
+    <div id="km-validation-summary" class="km-validation-summary" hidden></div>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script src="preview.js"></script>
     <script src="panel-tools.js"></script>
+    <script src="validation.js"></script>
     <script>
       new MutationObserver(function () {
         document.querySelectorAll('a, button').forEach(function (elemento) {
