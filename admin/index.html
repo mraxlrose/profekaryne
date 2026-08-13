@@ -37,16 +37,28 @@
     <script src="panel-tools.js"></script>
     <script src="validation.js"></script>
     <script>
-      new MutationObserver(function () {
+      function limparCabecalhoDoFluxo() {
         document.querySelectorAll('a, button').forEach(function (elemento) {
           if (elemento.textContent.trim().indexOf('Verificar se há Pré-visualização') !== -1) {
             elemento.style.display = 'none';
           }
           if (elemento.textContent.trim().indexOf('Nova Publicação') !== -1) {
-            elemento.style.display = 'none';
+            var bloco = elemento.parentElement;
+            while (bloco && bloco !== document.body) {
+              var texto = (bloco.textContent || '').trim();
+              if (texto.indexOf('Fluxo de Trabalho Editorial') !== -1 && texto.indexOf('entradas aguardando') !== -1) {
+                bloco.style.display = 'none';
+                break;
+              }
+              bloco = bloco.parentElement;
+            }
           }
         });
+      }
+      new MutationObserver(function () {
+        limparCabecalhoDoFluxo();
       }).observe(document.body, { childList: true, subtree: true });
+      setInterval(limparCabecalhoDoFluxo, 500);
     </script>
   </body>
 </html>
