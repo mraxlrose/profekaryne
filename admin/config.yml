@@ -1,0 +1,86 @@
+backend:
+  name: github
+  repo: mraxlrose/profekaryne
+  branch: main
+  base_url: https://km-cms-auth.mraxlrose.workers.dev
+  auth_endpoint: auth
+
+publish_mode: simple
+
+collections:
+  - name: site
+    label: Textos do site
+    files:
+      - name: conteudo-principal
+        label: Conteúdo das seções
+        file: content/site.json
+        format: json
+        fields:
+          - label: Início
+            name: hero
+            widget: object
+            fields:
+              - { label: Selo, name: selo, widget: string }
+              - { label: Título (antes da palavra em destaque), name: titulo, widget: string }
+              - { label: Palavra em destaque, name: destaque, widget: string }
+              - { label: Complemento do título, name: complemento, widget: string }
+              - { label: Texto de apresentação, name: descricao, widget: text }
+          - label: Sobre
+            name: sobre
+            widget: object
+            fields:
+              - { label: Selo, name: selo, widget: string }
+              - { label: Nome no título, name: titulo, widget: string }
+              - { label: Subtítulo, name: subtitulo, widget: string }
+              - label: Parágrafos
+                name: paragrafos
+                widget: list
+                field: { label: Parágrafo, name: texto, widget: text }
+          - label: Serviços
+            name: servicos
+            widget: object
+            fields:
+              - { label: Selo, name: selo, widget: string }
+              - { label: Título, name: titulo, widget: string }
+              - { label: Texto introdutório, name: descricao, widget: text }
+              - label: Cards de serviços
+                name: itens
+                widget: list
+                fields:
+                  - { label: Título, name: titulo, widget: string }
+                  - { label: Descrição, name: descricao, widget: text }
+          - label: Redação
+            name: redacao
+            widget: object
+            fields:
+              - { label: Selo, name: selo, widget: string }
+              - { label: Título, name: titulo, widget: string }
+              - { label: Texto introdutório, name: descricao, widget: text }
+          - label: Horários
+            name: horarios
+            widget: object
+            fields:
+              - { label: Selo, name: selo, widget: string }
+              - { label: Título, name: titulo, widget: string }
+              - { label: Texto introdutório, name: descricao, widget: text }
+          - label: Valores
+            name: valores
+            widget: object
+            fields:
+              - { label: Selo, name: selo, widget: string }
+              - { label: Título, name: titulo, widget: string }
+              - { label: Texto introdutório, name: descricao, widget: text }
+          - label: Jogos
+            name: jogos
+            widget: object
+            fields:
+              - { label: Selo, name: selo, widget: string }
+              - { label: Título, name: titulo, widget: string }
+              - { label: Texto introdutório, name: descricao, widget: text }
+          - label: Contato
+            name: contato
+            widget: object
+            fields:
+              - { label: Selo, name: selo, widget: string }
+              - { label: Título, name: titulo, widget: string }
+              - { label: Texto introdutório, name: descricao, widget: text }

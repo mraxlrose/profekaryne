@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "selo": "KM Centro de Aprendizagem",
+    "titulo": "Aprendizagem com método,",
+    "destaque": "clareza",
+    "complemento": "e propósito",
+    "descricao": "O KM Centro de Aprendizagem, idealizado pela professora Karyne Mignoni, é um espaço que une ensino, escuta e transformação. Oferecemos aulas particulares, reforço pedagógico, materiais educativos, atendimento em psicanálise e cursos de desenvolvimento pessoal e profissional, com foco no equilíbrio emocional e em resultados reais na aprendizagem.\nNosso propósito é caminhar junto, promovendo avanços consistentes, confiança e novas possibilidades."
+  },
+  "sobre": {
+    "selo": "Quem sou eu",
+    "titulo": "Karyne Mignoni",
+    "subtitulo": "Aprendizagem com método e escuta",
+    "paragrafos": [
+      "Sou Karyne Mignoni, graduada em Letras e Literaturas de Língua Portuguesa, Neuropsicopedagoga e Psicanalista, com mais de duas décadas de experiência na educação.",
+      "Minha trajetória é marcada pela dedicação à linguagem, à escuta e ao desenvolvimento humano. Ao longo dos anos, compreendi que ensinar vai além da transmissão de conteúdo: envolve acolher, compreender e identificar as necessidades singulares de cada aluno. Ao mesmo tempo, reconheço os desafios do contexto escolar, onde turmas numerosas e demandas estruturais, burocráticas e sociais, muitas vezes, dificultam um acompanhamento individualizado.",
+      "Por isso, o KM Centro de Aprendizagem surge com uma proposta diferenciada: promover a evolução da aprendizagem por meio de um acompanhamento próximo, que integra aspectos emocionais e pedagógicos, favorecendo o desenvolvimento e resultados consistentes.",
+      "Além da atuação escolar, realizo atendimentos particulares com método próprio, que integra ensino estruturado, escuta ativa e análise das dificuldades individuais, promovendo evolução consistente na aprendizagem, na escrita e na organização do pensamento."
+    ]
+  },
+  "servicos": {
+    "selo": "O que ofereço",
+    "titulo": "Serviços disponíveis",
+    "descricao": "Cada atendimento é pensado para o momento e objetivo do estudante, com planos flexíveis e acompanhamento contínuo. O acompanhamento integra ensino estruturado e trabalho de desbloqueio emocional.",
+    "itens": [
+      { "titulo": "Redação ENEM & Vestibular", "descricao": "Método completo para dominar a dissertação argumentativa: estrutura, repertório, coesão, proposta de intervenção e desbloqueio emocional para evolução da escrita. Do básico à nota 1000." },
+      { "titulo": "Reforço Escolar", "descricao": "Apoio pedagógico para estudantes do Ensino Fundamental I, II e Médio, alinhado ao currículo escolar com atenção às dificuldades de aprendizagem e ao desenvolvimento emocional." },
+      { "titulo": "Aulas Particulares", "descricao": "Conteúdo 100% personalizado conforme a necessidade do aluno — gramática, interpretação de texto ou produção textual." },
+      { "titulo": "Escrita Profissional", "descricao": "Para adultos que precisam melhorar a comunicação oral e escrita no trabalho." },
+      { "titulo": "Psicanálise", "descricao": "Atendimentos em psicanálise com escuta ativa, auxiliando no fortalecimento emocional e na organização do pensamento para evolução na aprendizagem e na vida." },
+      { "titulo": "Projetos de Iniciação Científica", "descricao": "Acompanhamento online na elaboração de projetos de iniciação científica do Ensino Fundamental e Médio: tema, problema, objetivos, metodologia e cronograma." },
+      { "titulo": "Aulas Online", "descricao": "Toda a qualidade das aulas presenciais no ambiente virtual. Plataforma interativa e material digital." }
+    ]
+  },
+  "redacao": {
+    "selo": "Método exclusivo",
+    "titulo": "Aula de Redação preparatória para ENEM e Vestibular",
+    "descricao": "Redação nota 1000 não é sorte, é método! Aulas individualizadas, em grupos, online ou presencial — você escolhe o formato."
+  },
+  "horarios": {
+    "selo": "Disponibilidade",
+    "titulo": "Horários disponíveis",
+    "descricao": "Atendimentos presenciais em Caxias do Sul (RS) e online para todo o Brasil."
+  },
+  "valores": {
+    "selo": "Investimento",
+    "titulo": "Valores",
+    "descricao": "Cada proposta é pensada de acordo com o momento e o objetivo de quem aprende. Os valores variam conforme o tipo de acompanhamento — e após a avaliação inicial gratuita, indicamos juntos o plano mais adequado para você."
+  },
+  "jogos": {
+    "selo": "Loja de jogos digitais",
+    "titulo": "Jogos educativos de Português",
+    "descricao": "PDFs prontos para imprimir e usar em sala de aula ou em casa. Compra com desconto via PIX e envio em 24 horas pelo WhatsApp, ou garanta o envio imediato e seguro pelo site Hotmart."
+  },
+  "contato": {
+    "selo": "Fale comigo",
+    "titulo": "Pronto para começar?",
+    "descricao": "Preencha o formulário ou entre em contato diretamente. A avaliação inicial é gratuita!"
+  }
+}

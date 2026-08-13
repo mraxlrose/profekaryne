@@ -22,6 +22,13 @@ profekaryne/
 │   │   └── profekaryne.png   # Foto da professora
 │   └── pdf/
 │       └── quiz-substantivos-missao-gramatica.pdf  # Jogo gratuito
+├── content/
+│   └── site.json              # Textos principais editáveis pelo painel
+├── admin/
+│   ├── index.html             # Painel Decap CMS, acessível em /admin/
+│   └── config.yml             # Campos exibidos no painel e integração GitHub
+└── cloudflare-worker/
+    └── src/index.js           # Login seguro do painel via GitHub OAuth
 ```
 
 ## Seções do site
@@ -51,6 +58,14 @@ python3 -m http.server 8080
 ```
 
 Não há etapa de build, npm install ou compilação.
+
+## Painel de edição de conteúdo
+
+Os textos principais das seções podem ser editados no painel `https://kmcentrodeaprendizagem.com.br/admin/`. Ele apresenta campos em português para Início, Sobre, Serviços, Redação, Horários, Valores, Jogos e Contato.
+
+O painel salva as alterações no arquivo `content/site.json` do GitHub; em seguida, o GitHub Pages publica normalmente. Para que o login do painel funcione, é necessário concluir uma única vez a configuração do GitHub OAuth em um Cloudflare Worker. As instruções estão em [`cloudflare-worker/README.md`](cloudflare-worker/README.md).
+
+Nunca coloque o Client Secret do GitHub ou qualquer token neste repositório.
 
 ## Ativar o formulário de contato
 
