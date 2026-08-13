@@ -4,9 +4,17 @@ backend:
   branch: main
   base_url: https://km-cms-auth.mraxlrose.workers.dev
   auth_endpoint: auth
+  commit_messages:
+    create: "{{author-name}} cria {{path}}"
+    update: "{{author-name}} atualiza {{path}}"
+    delete: "{{author-name}} remove {{path}}"
+    uploadMedia: "{{author-name}} envia {{path}}"
 
-publish_mode: simple
+publish_mode: editorial_workflow
 locale: pt
+site_url: https://kmcentrodeaprendizagem.com.br
+display_url: https://kmcentrodeaprendizagem.com.br
+show_preview_links: false
 
 # Necessário ao Decap CMS; imagens enviadas pelo painel ficam nesta pasta.
 media_folder: assets/img/uploads
@@ -132,10 +140,10 @@ collections:
             name: contato
             widget: object
             fields:
-              - { label: WhatsApp (somente números com DDI), name: whatsappNumero, widget: string, hint: "Exemplo: 5554992530598" }
-              - { label: WhatsApp exibido no site, name: whatsappExibicao, widget: string }
-              - { label: E-mail, name: email, widget: string }
-              - { label: Link do Instagram, name: instagramUrl, widget: string }
+              - { label: WhatsApp (somente números com DDI), name: whatsappNumero, widget: string, hint: "Exemplo: 5554992530598", pattern: ['^55\\d{10,11}$', 'Use somente números, começando por 55.'] }
+              - { label: WhatsApp exibido no site, name: whatsappExibicao, widget: string, pattern: ['^\\(\\d{2}\\)\\s9\\s?\\d{4}-\\d{4}$', 'Use o formato (54) 9 9253-0598.'] }
+              - { label: E-mail, name: email, widget: string, pattern: ['^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$', 'Informe um e-mail válido.'] }
+              - { label: Link do Instagram, name: instagramUrl, widget: string, pattern: ['^https://(www\\.)?instagram\\.com/.+', 'Informe o link completo do Instagram.'] }
               - { label: Instagram exibido, name: instagramExibicao, widget: string }
               - { label: Local de atendimento, name: local, widget: string }
               - { label: Tempo de resposta, name: tempoResposta, widget: string }
@@ -196,6 +204,45 @@ collections:
               - { label: Nível/indicação, name: nivel, widget: string }
               - { label: Descrição, name: descricao, widget: text }
               - { label: Texto de preço, name: preco, widget: string }
-              - { label: Link do PDF ou Hotmart, name: link, widget: string }
+              - { label: Link do PDF ou Hotmart, name: link, widget: string, pattern: ['^(https://|/|assets/).+', 'Informe um link completo ou um caminho válido para o PDF.'] }
               - { label: Texto do botão, name: botao, widget: string }
               - { label: Selo, name: badge, widget: string }
+
+  - name: agendamentos
+    label: Rascunhos e agendamentos
+    files:
+      - name: agendamentos-de-conteudo
+        label: Alterações programadas
+        file: content/agendamentos.json
+        format: json
+        fields:
+          - label: Alterações
+            name: itens
+            widget: list
+            summary: "{{descricao}} — {{data}}"
+            fields:
+              - { label: Descrição da publicação, name: descricao, widget: string, hint: "Ex.: Atualizar horário das aulas de sábado" }
+              - { label: Publicar em, name: data, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "DD/MM/YYYY", time_format: "HH:mm" }
+              - label: Arquivo a alterar
+                name: arquivo
+                widget: select
+                options: ["content/site.json", "content/agenda.json", "content/contatos.json", "content/valores.json", "content/jogos.json"]
+              - { label: Campo a alterar, name: campo, widget: string, hint: "Ex.: horarios.observacao ou hero.titulo" }
+              - { label: Novo texto, name: valor, widget: text }
+              - { label: Ativo, name: ativo, widget: boolean, default: true }
+
+  - name: registro
+    label: Registro de versões
+    files:
+      - name: notas-de-publicacao
+        label: Descreva sua publicação
+        file: content/notas-publicacao.json
+        format: json
+        fields:
+          - label: Notas de publicação
+            name: itens
+            widget: list
+            summary: "{{data}} — {{descricao}}"
+            fields:
+              - { label: Data da publicação, name: data, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "DD/MM/YYYY", time_format: "HH:mm" }
+              - { label: "O que foi alterado?", name: descricao, widget: text, hint: "Ex.: Atualizei os horários de atendimento de setembro." }

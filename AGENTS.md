@@ -58,6 +58,8 @@ e acessar `http://localhost:8080`.
 ├── content/site.json                             # Textos administráveis pelo painel
 ├── admin/                                        # Interface/configuração do Decap CMS e histórico de alterações
 ├── cloudflare-worker/                             # Código do OAuth; segredos ficam apenas no Cloudflare
+├── scripts/publicar-agendamentos.mjs               # Aplica alterações de conteúdo programadas
+├── .github/workflows/publicar-agendamentos.yml     # Executa os agendamentos a cada 15 min
 └── comprovantes/                                 # Arquivos locais não rastreados pelo Git; não publicar sem pedido explícito
 ```
 
@@ -125,6 +127,8 @@ O painel em `admin/` usa Decap CMS e permite que a editora modifique os textos p
 O CMS ainda registra uma alteração no GitHub por trás do painel, pois o GitHub Pages precisa receber os arquivos atualizados — mas a editora não precisa criar o commit manualmente. Para o login no CMS funcionar, `admin/config.yml` precisa apontar para o Worker Cloudflare publicado; o código e o procedimento estão em `cloudflare-worker/`. Nunca commitar ou exibir `GITHUB_CLIENT_SECRET`, tokens ou `STATE_SECRET`.
 
 O botão **Histórico** no topo do painel abre `admin/history.html`. Ele consulta a API pública do GitHub para listar os commits publicados e permite comparar, por arquivo, os trechos removidos ("Estava assim") e adicionados ("Ficou assim"). A restauração só é exibida para commits da conta GitHub conectada e cria um novo commit alterando exclusivamente arquivos `content/*.json`; nunca restaura código, configurações ou ativos.
+
+O painel usa `publish_mode: editorial_workflow`: alterações salvas primeiro ficam como rascunho e só chegam à `main` quando a editora as publica. O menu **Rascunhos e agendamentos** permite programar a troca de um campo textual em data/hora definida; o GitHub Actions confere a cada 15 minutos. O menu **Registro de versões** serve para a editora anotar, antes de publicar, o motivo da alteração. No topo há links para o site publicado, histórico, backup JSON e um indicador do status do GitHub Pages.
 
 `admin/preview.js` registra uma prévia customizada no Decap CMS para o arquivo `conteudo-principal`. Ela carrega uma cópia navegável da página inicial em um iframe e aplica os textos ainda não publicados; continua recomendável testar a versão publicada também em desktop/mobile.
 

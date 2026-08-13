@@ -7,19 +7,29 @@
     <style>
       /* GitHub Pages não gera deploy previews; a prévia útil é o ícone de olho. */
       [data-test-id="preview-link"], [data-testid="preview-link"] { display: none !important; }
-      .km-history-link {
-        position: fixed; top: 10px; right: 74px; z-index: 10000;
-        padding: 8px 12px; border-radius: 5px; background: #fff; color: #2469a8;
+      .km-panel-actions {
+        position: fixed; top: 10px; right: 74px; z-index: 10000; display: flex; gap: 8px;
+      }
+      .km-panel-actions a, .km-panel-actions button {
+        display: inline-block; padding: 8px 12px; border-radius: 5px; background: #fff; color: #2469a8;
         font: 600 14px Arial, sans-serif; text-decoration: none;
         border: 1px solid #c8d4df; box-shadow: 0 1px 3px rgba(0,0,0,.12);
       }
-      .km-history-link:hover { background: #edf6fc; }
+      .km-panel-actions a:hover, .km-panel-actions button:hover { background: #edf6fc; cursor: pointer; }
+      .km-publish-status { position: fixed; right: 12px; bottom: 12px; z-index: 10000; max-width: 310px; padding: 9px 12px; border-radius: 5px; background: #203447; color: #fff; font: 13px Arial, sans-serif; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+      .km-publish-status.ok { background: #236f46; } .km-publish-status.wait { background: #9a6511; }
     </style>
   </head>
   <body>
-    <a class="km-history-link" href="history.html" title="Ver as alterações já publicadas">Histórico</a>
+    <nav class="km-panel-actions" aria-label="Ações do painel">
+      <a href="history.html" title="Ver as alterações já publicadas">Histórico</a>
+      <a href="https://kmcentrodeaprendizagem.com.br/" target="_blank" rel="noopener">Ver site ↗</a>
+      <button id="km-backup" type="button" title="Baixar uma cópia dos textos atuais">Baixar backup</button>
+    </nav>
+    <div id="km-publish-status" class="km-publish-status">Verificando publicação…</div>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script src="preview.js"></script>
+    <script src="panel-tools.js"></script>
     <script>
       new MutationObserver(function () {
         document.querySelectorAll('a, button').forEach(function (elemento) {
