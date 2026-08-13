@@ -12,8 +12,6 @@ backend:
 
 publish_mode: editorial_workflow
 locale: pt
-site_url: https://kmcentrodeaprendizagem.com.br
-display_url: https://kmcentrodeaprendizagem.com.br
 show_preview_links: false
 
 # Necessário ao Decap CMS; imagens enviadas pelo painel ficam nesta pasta.
