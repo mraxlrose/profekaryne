@@ -124,7 +124,7 @@ O painel em `admin/` usa Decap CMS e permite que a editora modifique os textos p
 
 O CMS ainda registra uma alteração no GitHub por trás do painel, pois o GitHub Pages precisa receber os arquivos atualizados — mas a editora não precisa criar o commit manualmente. Para o login no CMS funcionar, `admin/config.yml` precisa apontar para o Worker Cloudflare publicado; o código e o procedimento estão em `cloudflare-worker/`. Nunca commitar ou exibir `GITHUB_CLIENT_SECRET`, tokens ou `STATE_SECRET`.
 
-O botão **Histórico** no topo do painel abre `admin/history.html`. Ele consulta a API pública do GitHub para listar os commits publicados e permite comparar, por arquivo, os trechos removidos ("Estava assim") e adicionados ("Ficou assim").
+O botão **Histórico** no topo do painel abre `admin/history.html`. Ele consulta a API pública do GitHub para listar os commits publicados e permite comparar, por arquivo, os trechos removidos ("Estava assim") e adicionados ("Ficou assim"). A restauração só é exibida para commits da conta GitHub conectada e cria um novo commit alterando exclusivamente arquivos `content/*.json`; nunca restaura código, configurações ou ativos.
 
 `admin/preview.js` registra uma prévia customizada no Decap CMS para o arquivo `conteudo-principal`. Ela carrega uma cópia navegável da página inicial em um iframe e aplica os textos ainda não publicados; continua recomendável testar a versão publicada também em desktop/mobile.
 
