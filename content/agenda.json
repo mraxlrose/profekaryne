@@ -1,0 +1,4 @@
+{
+  "horarios": { "observacao": "Presencial: Caxias do Sul / RS | Online: todo o Brasil", "duracao": "50 min (individual) ou 60 min (redação)", "pagamento": "PIX · Transferência · Dinheiro", "linhas": [{"dia":"Segunda-feira","manha":"—","tarde":"—","noite":"—"},{"dia":"Terça-feira","manha":"—","tarde":"—","noite":"19h–22h"},{"dia":"Quarta-feira","manha":"08h–12h","tarde":"14h–18h","noite":"—"},{"dia":"Quinta-feira","manha":"—","tarde":"—","noite":"—"},{"dia":"Sexta-feira","manha":"—","tarde":"14h–18h","noite":"19h–22h"}] },
+  "aviso": { "ativo": false, "texto": "" }
+}

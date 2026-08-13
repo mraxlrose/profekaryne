@@ -89,3 +89,111 @@ collections:
               - { label: Selo, name: selo, widget: string }
               - { label: Título, name: titulo, widget: string }
               - { label: Texto introdutório, name: descricao, widget: text }
+
+  - name: operacao
+    label: Horários e atendimento
+    files:
+      - name: agenda
+        label: Horários, pagamentos e avisos de agenda
+        file: content/agenda.json
+        format: json
+        fields:
+          - label: Horários semanais
+            name: horarios
+            widget: object
+            fields:
+              - { label: Observação abaixo da tabela, name: observacao, widget: string }
+              - { label: Duração das aulas, name: duracao, widget: string }
+              - { label: Formas de pagamento, name: pagamento, widget: string }
+              - label: Linhas da tabela (dia, manhã, tarde, noite)
+                name: linhas
+                widget: list
+                fields:
+                  - { label: Dia, name: dia, widget: string }
+                  - { label: Manhã, name: manha, widget: string }
+                  - { label: Tarde, name: tarde, widget: string }
+                  - { label: Noite, name: noite, widget: string }
+          - label: Aviso temporário no topo
+            name: aviso
+            widget: object
+            fields:
+              - { label: Exibir aviso, name: ativo, widget: boolean, default: false }
+              - { label: Texto do aviso, name: texto, widget: string, required: false }
+
+  - name: contatos
+    label: Contatos e botões
+    files:
+      - name: dados-de-contato
+        label: WhatsApp, e-mail e redes sociais
+        file: content/contatos.json
+        format: json
+        fields:
+          - label: Contato
+            name: contato
+            widget: object
+            fields:
+              - { label: WhatsApp (somente números com DDI), name: whatsappNumero, widget: string, hint: "Exemplo: 5554992530598" }
+              - { label: WhatsApp exibido no site, name: whatsappExibicao, widget: string }
+              - { label: E-mail, name: email, widget: string }
+              - { label: Link do Instagram, name: instagramUrl, widget: string }
+              - { label: Instagram exibido, name: instagramExibicao, widget: string }
+              - { label: Local de atendimento, name: local, widget: string }
+              - { label: Tempo de resposta, name: tempoResposta, widget: string }
+
+  - name: identidade
+    label: Identidade visual
+    files:
+      - name: fotos-e-logos
+        label: Foto e logos
+        file: content/marca.json
+        format: json
+        fields:
+          - label: Imagens da marca
+            name: marca
+            widget: object
+            fields:
+              - { label: Foto da Karyne, name: foto, widget: image, hint: "Preferir imagem vertical e nítida." }
+              - { label: Logo tema claro, name: logoClaro, widget: image }
+              - { label: Logo tema escuro, name: logoEscuro, widget: image }
+
+  - name: valores
+    label: Valores e planos
+    files:
+      - name: cards-de-valores
+        label: Editar cards de valores
+        file: content/valores.json
+        format: json
+        fields:
+          - label: Planos
+            name: itens
+            widget: list
+            fields:
+              - { label: Ícone, name: icone, widget: string }
+              - { label: Nome do plano, name: titulo, widget: string }
+              - { label: Preço, name: preco, widget: string }
+              - { label: Período, name: periodo, widget: string }
+              - label: Itens incluídos
+                name: itens
+                widget: list
+                field: { label: Item, name: texto, widget: string }
+
+  - name: jogos
+    label: Jogos educativos
+    files:
+      - name: cards-de-jogos
+        label: Editar jogos e links de compra
+        file: content/jogos.json
+        format: json
+        fields:
+          - label: Jogos
+            name: itens
+            widget: list
+            fields:
+              - { label: Emoji, name: emoji, widget: string }
+              - { label: Título, name: titulo, widget: string }
+              - { label: Nível/indicação, name: nivel, widget: string }
+              - { label: Descrição, name: descricao, widget: text }
+              - { label: Texto de preço, name: preco, widget: string }
+              - { label: Link do PDF ou Hotmart, name: link, widget: string }
+              - { label: Texto do botão, name: botao, widget: string }
+              - { label: Selo, name: badge, widget: string }

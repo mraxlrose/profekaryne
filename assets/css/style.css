@@ -30,6 +30,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
+.site-alerta { background: var(--verde); color: var(--fundo-profundo); padding: 10px 18px; text-align: center; font-size: .9rem; font-weight: 600; }
 p, li, .section-sub, .hero-sub, .valor-lista li, .sobre-lista li,
 .step p, .redacao-steps p, .tooltip-box { text-align: justify; }
 #valores p, #valores li, #valores .section-sub { text-align: left; }
