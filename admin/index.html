@@ -18,6 +18,7 @@
       .km-panel-actions a:hover, .km-panel-actions button:hover { background: #edf6fc; cursor: pointer; }
       .km-publish-status { position: fixed; right: 12px; bottom: 12px; z-index: 10000; max-width: 310px; padding: 9px 12px; border-radius: 5px; background: #203447; color: #fff; font: 13px Arial, sans-serif; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
       .km-publish-status.ok { background: #236f46; } .km-publish-status.wait { background: #9a6511; }
+      .km-publish-status[hidden] { display: none; }
       .km-validation-summary { position: fixed; top: 62px; right: 12px; z-index: 10000; max-width: 330px; padding: 10px 12px; border-radius: 5px; background: #b42318; color: #fff; font: 13px/1.4 Arial, sans-serif; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
       .km-invalid { border: 2px solid #d92d20 !important; background: #fff6f5 !important; }
       .km-field-error { margin-top: 5px; color: #b42318; font: 12px Arial, sans-serif; }
@@ -39,6 +40,9 @@
       new MutationObserver(function () {
         document.querySelectorAll('a, button').forEach(function (elemento) {
           if (elemento.textContent.trim().indexOf('Verificar se há Pré-visualização') !== -1) {
+            elemento.style.display = 'none';
+          }
+          if (elemento.textContent.trim().indexOf('Nova Publicação') !== -1) {
             elemento.style.display = 'none';
           }
         });

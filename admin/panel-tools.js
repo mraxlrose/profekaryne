@@ -1,6 +1,7 @@
 (function () {
   var arquivos = ['site.json', 'agenda.json', 'contatos.json', 'marca.json', 'valores.json', 'jogos.json', 'agendamentos.json', 'notas-publicacao.json'];
   var status = document.getElementById('km-publish-status');
+  status.hidden = true;
 
   function baixarBackup() {
     var botao = document.getElementById('km-backup'); botao.disabled = true; botao.textContent = 'Preparando…';
@@ -27,12 +28,15 @@
         if (build.status === 'built' && build.commit === commitAtual.sha) {
           status.className = 'km-publish-status ok';
           status.textContent = 'Site publicado · atualização concluída.';
+          status.hidden = false;
+          setTimeout(function () { status.hidden = true; }, 8000);
         } else {
           status.className = 'km-publish-status wait';
           status.textContent = 'Publicação em andamento. O site ainda está recebendo a última alteração.';
+          status.hidden = false;
         }
       }).catch(function () {
-        status.className = 'km-publish-status'; status.textContent = 'Não foi possível consultar a publicação agora.';
+        status.hidden = true;
       });
   }
 
