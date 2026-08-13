@@ -63,6 +63,8 @@ Não há etapa de build, npm install ou compilação.
 
 Os textos principais das seções podem ser editados no painel `https://kmcentrodeaprendizagem.com.br/admin/`. Ele apresenta campos em português para Início, Sobre, Serviços, Redação, Horários, Valores, Jogos e Contato.
 
+Ao abrir “Conteúdo das seções”, a editora pode usar a aba **Prévia** do painel para revisar a aparência dos textos antes de clicar em **Publicar**. Essa prévia é somente local no navegador: não cria commit e não altera o site público.
+
 O painel salva as alterações no arquivo `content/site.json` do GitHub; em seguida, o GitHub Pages publica normalmente. Para que o login do painel funcione, é necessário concluir uma única vez a configuração do GitHub OAuth em um Cloudflare Worker. As instruções estão em [`cloudflare-worker/README.md`](cloudflare-worker/README.md).
 
 Nunca coloque o Client Secret do GitHub ou qualquer token neste repositório.

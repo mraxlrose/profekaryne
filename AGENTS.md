@@ -124,6 +124,8 @@ O painel em `admin/` usa Decap CMS e permite que a editora modifique os textos p
 
 O CMS ainda registra uma alteração no GitHub por trás do painel, pois o GitHub Pages precisa receber os arquivos atualizados — mas a editora não precisa criar o commit manualmente. Para o login no CMS funcionar, `admin/config.yml` precisa apontar para o Worker Cloudflare publicado; o código e o procedimento estão em `cloudflare-worker/`. Nunca commitar ou exibir `GITHUB_CLIENT_SECRET`, tokens ou `STATE_SECRET`.
 
+`admin/preview.js` registra uma prévia customizada no Decap CMS para o arquivo `conteudo-principal`. Ela é usada para conferir os textos e cards antes da publicação, mas não substitui testes visuais do site final em desktop/mobile.
+
 ## Imagens, downloads e integrações externas
 
 - O logo dourado é mostrado no tema claro e o preto no tema escuro, pelas classes `logo-light` e `logo-dark`.
