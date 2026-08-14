@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Métricas do site — KM Centro de Aprendizagem</title>
+    <link rel="stylesheet" href="metrics.css?v=1">
+  </head>
+  <body>
+    <header class="topo"><a href="./">← Voltar ao painel</a><div><h1>Métricas do site</h1><p id="atualizacao">Carregando dados do Google Analytics…</p></div><button id="atualizar" type="button">Atualizar</button></header>
+    <main>
+      <section class="controles" aria-label="Período do relatório"><span>Período:</span><button data-days="7">7 dias</button><button data-days="30" class="ativo">30 dias</button><button data-days="90">90 dias</button></section>
+      <section id="mensagem" class="mensagem">Conectando ao Google Analytics…</section>
+      <div id="painel" hidden>
+        <section class="kpis" id="kpis"></section>
+        <section class="grid dois">
+          <article class="cartao grande"><div class="cabecalho-cartao"><div><h2>Visitas ao longo do tempo</h2><p>Escolha a métrica do gráfico.</p></div><div id="seletores-grafico" class="seletores"><button data-metric="activeUsers" class="ativo">Usuários</button><button data-metric="sessions">Sessões</button><button data-metric="screenPageViews">Visualizações</button></div></div><div id="grafico" class="grafico"></div></article>
+          <article class="cartao tempo-real"><h2>Agora no site</h2><strong id="ativos-agora">—</strong><span>usuários ativos nos últimos 30 minutos</span><div id="paises-agora" class="lista-curta"></div></article>
+        </section>
+        <section class="grid tres">
+          <article class="cartao"><h2>De onde vêm</h2><p>Principais canais de aquisição.</p><div id="canais"></div></article>
+          <article class="cartao"><h2>Dispositivos</h2><p>Celular, computador e tablet.</p><div id="dispositivos"></div></article>
+          <article class="cartao"><h2>Eventos importantes</h2><p>Interações registradas no site.</p><div id="eventos"></div></article>
+        </section>
+        <section class="grid dois">
+          <article class="cartao"><h2>Principais cidades e regiões</h2><p>Visitantes por localização.</p><div id="geografia"></div></article>
+          <article class="cartao"><h2>Páginas mais acessadas</h2><p>Conteúdos que mais despertam interesse.</p><div id="paginas"></div></article>
+        </section>
+        <section class="grid dois">
+          <article class="cartao"><h2>Origens detalhadas</h2><p>Fonte e meio de cada acesso.</p><div id="origens"></div></article>
+          <article class="cartao leitura"><h2>Como usar estes dados</h2><ul><li>Compare períodos para entender a evolução do interesse.</li><li>Use as páginas mais acessadas para priorizar conteúdos e serviços.</li><li>Cidades e canais ajudam a decidir onde divulgar o trabalho.</li><li>Os dados podem levar até 24 horas para aparecer no Analytics.</li></ul></article>
+        </section>
+      </div>
+    </main>
+    <script src="metrics.js?v=1"></script>
+  </body>
+</html>
