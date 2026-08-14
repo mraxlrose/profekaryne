@@ -8,18 +8,21 @@
       /* GitHub Pages não gera deploy previews; a prévia útil é o ícone de olho. */
       [data-test-id="preview-link"], [data-testid="preview-link"] { display: none !important; }
       .km-panel-actions {
-        position: fixed; top: 0; right: 64px; z-index: 10000; height: 60px;
-        display: flex; align-items: center; gap: 0; background: #fff;
+        position: fixed; top: 0; left: 520px; z-index: 10000; height: 60px;
+        display: flex; align-items: center; gap: 0; background: #fff; overflow-x: auto;
       }
       .km-panel-actions a, .km-panel-actions button {
-        display: inline-flex; align-items: center; height: 60px; padding: 0 12px;
+        display: inline-flex; align-items: center; gap: 6px; height: 60px; padding: 0 12px;
         border: 0; border-radius: 0; background: transparent; color: #3367b7;
         font: 600 16px Arial, sans-serif; text-decoration: none; box-shadow: none;
         white-space: nowrap; appearance: none;
       }
       .km-panel-actions a:hover, .km-panel-actions button:hover { background: #edf2f7; cursor: pointer; }
+      .km-action-icon { display: inline-flex; width: 18px; height: 18px; color: #9aa6b2; flex: 0 0 auto; }
+      .km-panel-actions a:hover .km-action-icon, .km-panel-actions button:hover .km-action-icon { color: #3367b7; }
+      .km-action-icon svg { display: block; width: 18px; height: 18px; stroke: currentColor; }
       @media (max-width: 980px) {
-        .km-panel-actions { right: 54px; max-width: calc(100vw - 54px); overflow-x: auto; }
+        .km-panel-actions { left: 360px; max-width: calc(100vw - 420px); }
         .km-panel-actions a, .km-panel-actions button { padding: 0 9px; font-size: 14px; }
       }
       .km-publish-status { position: fixed; right: 12px; bottom: 12px; z-index: 10000; max-width: 310px; padding: 9px 12px; border-radius: 5px; background: #203447; color: #fff; font: 13px Arial, sans-serif; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
@@ -32,11 +35,26 @@
   </head>
   <body>
     <nav class="km-panel-actions" aria-label="Ações do painel">
-      <a href="history.html" title="Ver as alterações já publicadas">Histórico</a>
-      <a href="metrics.html" title="Ver dados de visitantes e resultados do site">Métricas</a>
-      <a href="https://kmcentrodeaprendizagem.com.br/" target="_blank" rel="noopener">Ver site ↗</a>
-      <button id="km-backup" type="button" title="Baixar uma cópia dos textos atuais">Baixar backup</button>
-      <button id="km-discard" type="button" title="Descartar mudanças ainda não salvas neste formulário">Descartar alterações</button>
+      <a href="history.html" title="Ver as alterações já publicadas">
+        <span class="km-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/><path d="M12 7v5l3 2"/></svg></span>
+        Histórico
+      </a>
+      <a href="metrics.html" title="Ver dados de visitantes e resultados do site">
+        <span class="km-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 16v-4"/><path d="M13 16V8"/><path d="M18 16v-7"/></svg></span>
+        Métricas
+      </a>
+      <a href="https://kmcentrodeaprendizagem.com.br/" target="_blank" rel="noopener">
+        <span class="km-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7"/><path d="M9 7h8v8"/><path d="M5 5v14h14"/></svg></span>
+        Ver site
+      </a>
+      <button id="km-backup" type="button" title="Baixar uma cópia dos textos atuais">
+        <span class="km-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></span>
+        Baixar backup
+      </button>
+      <button id="km-discard" type="button" title="Descartar mudanças ainda não salvas neste formulário">
+        <span class="km-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-15-6.7L3 13"/></svg></span>
+        Descartar alterações
+      </button>
     </nav>
     <div id="km-publish-status" class="km-publish-status">Verificando publicação…</div>
     <div id="km-validation-summary" class="km-validation-summary" hidden></div>
@@ -46,13 +64,41 @@
     <script src="panel-tools.js?v=2"></script>
     <script src="validation.js?v=2"></script>
     <script>
-      new MutationObserver(function () {
+      function textoNormalizado(elemento) {
+        return (elemento.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase()
+          .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      }
+
+      function posicionarAcoesDoPainel() {
+        var acoes = document.querySelector('.km-panel-actions');
+        if (!acoes) return;
+        var itens = Array.from(document.querySelectorAll('a, button')).filter(function (elemento) {
+          return !acoes.contains(elemento);
+        });
+        var midia = itens.find(function (elemento) { return textoNormalizado(elemento) === 'midia'; });
+        if (!midia) return;
+        var caixa = midia.getBoundingClientRect();
+        var esquerda = Math.round(caixa.right + 22);
+        var larguraDisponivel = Math.max(260, window.innerWidth - esquerda - 70);
+        acoes.style.left = esquerda + 'px';
+        acoes.style.top = Math.round(caixa.top) + 'px';
+        acoes.style.height = Math.round(caixa.height || 60) + 'px';
+        acoes.style.maxWidth = larguraDisponivel + 'px';
+      }
+
+      function ajustarPainel() {
         document.querySelectorAll('a, button').forEach(function (elemento) {
           if (elemento.textContent.trim().indexOf('Verificar se há Pré-visualização') !== -1) {
             elemento.style.display = 'none';
           }
         });
-      }).observe(document.body, { childList: true, subtree: true });
+        posicionarAcoesDoPainel();
+      }
+
+      new MutationObserver(ajustarPainel).observe(document.body, { childList: true, subtree: true });
+      window.addEventListener('resize', posicionarAcoesDoPainel);
+      setTimeout(ajustarPainel, 300);
+      setTimeout(ajustarPainel, 1000);
     </script>
   </body>
 </html>
