@@ -45,8 +45,7 @@ collections:
               - { label: Subtítulo, name: subtitulo, widget: string }
               - label: Parágrafos
                 name: paragrafos
-                widget: list
-                field: { label: Parágrafo, name: texto, widget: text }
+                widget: paragrafos-seguros
           - label: Serviços
             name: servicos
             widget: object
@@ -56,10 +55,7 @@ collections:
               - { label: Texto introdutório, name: descricao, widget: text }
               - label: Cards de serviços
                 name: itens
-                widget: list
-                fields:
-                  - { label: Título, name: titulo, widget: string }
-                  - { label: Descrição, name: descricao, widget: text }
+                widget: servicos-seguros
           - label: Redação
             name: redacao
             widget: object
@@ -113,12 +109,7 @@ collections:
               - { label: Formas de pagamento, name: pagamento, widget: string }
               - label: Linhas da tabela (dia, manhã, tarde, noite)
                 name: linhas
-                widget: list
-                fields:
-                  - { label: Dia, name: dia, widget: string }
-                  - { label: Manhã, name: manha, widget: string }
-                  - { label: Tarde, name: tarde, widget: string }
-                  - { label: Noite, name: noite, widget: string }
+                widget: horarios-seguros
           - label: Aviso temporário no topo
             name: aviso
             widget: object
@@ -196,18 +187,7 @@ collections:
         fields:
           - label: Alterações
             name: itens
-            widget: list
-            summary: "{{descricao}} — {{data}}"
-            fields:
-              - { label: Descrição da publicação, name: descricao, widget: string, hint: "Ex.: Atualizar horário das aulas de sábado" }
-              - { label: Publicar em, name: data, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "DD/MM/YYYY", time_format: "HH:mm" }
-              - label: Arquivo a alterar
-                name: arquivo
-                widget: select
-                options: ["content/site.json", "content/agenda.json", "content/contatos.json", "content/valores.json", "content/jogos.json"]
-              - { label: Campo a alterar, name: campo, widget: string, hint: "Ex.: horarios.observacao ou hero.titulo" }
-              - { label: Novo texto, name: valor, widget: text }
-              - { label: Ativo, name: ativo, widget: boolean, default: true }
+            widget: agendamentos-seguros
 
   - name: registro
     label: Registro de versões
@@ -219,8 +199,4 @@ collections:
         fields:
           - label: Notas de publicação
             name: itens
-            widget: list
-            summary: "{{data}} — {{descricao}}"
-            fields:
-              - { label: Data da publicação, name: data, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "DD/MM/YYYY", time_format: "HH:mm" }
-              - { label: "O que foi alterado?", name: descricao, widget: text, hint: "Ex.: Atualizei os horários de atendimento de setembro." }
+            widget: notas-seguras

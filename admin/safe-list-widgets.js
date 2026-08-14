@@ -109,6 +109,56 @@
     }
   });
 
+  function listaSegura(configuracao) {
+    return createClass({
+      getInitialState: function () { return { ultimaExclusao: null }; },
+      alterar: function (indice, chave, valor) {
+        var itens = copiar(this.props.value);
+        if (configuracao.simples) itens[indice] = valor;
+        else { itens[indice] = Object.assign({}, itens[indice], {}); itens[indice][chave] = valor; }
+        this.props.onChange(itens);
+      },
+      excluir: function (indice) {
+        var itens = copiar(this.props.value); var removido = itens[indice];
+        if (!window.confirm('Excluir ' + configuracao.singular + '? Você poderá desfazer logo em seguida.')) return;
+        itens.splice(indice, 1); this.props.onChange(itens);
+        this.setState({ ultimaExclusao: { indice: indice, valor: removido, mensagem: configuracao.singular + ' removido. Ainda não foi publicado.' } });
+      },
+      desfazer: function () { var acao = this.state.ultimaExclusao; if (!acao) return; var itens = copiar(this.props.value); itens.splice(acao.indice, 0, acao.valor); this.props.onChange(itens); this.setState({ ultimaExclusao: null }); },
+      adicionar: function () { var itens = copiar(this.props.value); itens.push(typeof configuracao.novo === 'function' ? configuracao.novo() : configuracao.novo); this.props.onChange(itens); },
+      controle: function (item, indice, definicao) {
+        var self = this; var valor = configuracao.simples ? item : item[definicao.nome];
+        var aoMudar = function (novoValor) { self.alterar(indice, definicao.nome, novoValor); };
+        if (definicao.tipo === 'boolean') return h('label', { style: { display: 'block', marginTop: '10px', fontWeight: '600', fontSize: '13px' } }, h('input', { type: 'checkbox', checked: !!valor, onChange: function (evento) { aoMudar(evento.target.checked); } }), ' ' + definicao.rotulo);
+        if (definicao.opcoes) return h('label', { style: { display: 'block', marginTop: '10px', fontWeight: '600', fontSize: '13px' } }, definicao.rotulo, h('select', { value: valor || '', onChange: function (evento) { aoMudar(evento.target.value); }, style: { display: 'block', width: '100%', marginTop: '4px', padding: '8px' } }, definicao.opcoes.map(function (opcao) { return h('option', { key: opcao, value: opcao }, opcao); })));
+        return campo(definicao.rotulo, valor, aoMudar, definicao.tipo === 'text' ? 'text' : undefined);
+      },
+      render: function () {
+        var self = this; var itens = copiar(this.props.value);
+        return h('div', { className: this.props.classNameWrapper, style: { maxWidth: '800px' } },
+          h('p', { style: { color: '#526779', margin: '0 0 8px' } }, 'Exclusões pedem confirmação e podem ser desfeitas antes de publicar.'), painelDeDesfazer(this),
+          itens.map(function (item, indice) {
+            var titulo = configuracao.resumo ? configuracao.resumo(item) : configuracao.singular;
+            return h('section', { key: indice, style: { border: '1px solid #cbd7df', borderRadius: '6px', padding: '12px', margin: '12px 0', background: '#fff' } },
+              h('strong', {}, titulo), configuracao.campos.map(function (definicao) { return h('div', { key: definicao.nome }, self.controle(item, indice, definicao)); }), botao('Excluir', function () { self.excluir(indice); }, true)
+            );
+          }), botao(configuracao.adicionar, function () { self.adicionar(); })
+        );
+      }
+    });
+  }
+
+  var ParagrafosSeguros = listaSegura({ singular: 'Parágrafo', adicionar: 'Adicionar parágrafo', simples: true, novo: '', resumo: function () { return 'Parágrafo'; }, campos: [{ nome: 'texto', rotulo: 'Texto do parágrafo', tipo: 'text' }] });
+  var ServicosSeguros = listaSegura({ singular: 'Serviço', adicionar: 'Adicionar serviço', novo: function () { return { titulo: 'Novo serviço', descricao: '' }; }, resumo: function (item) { return item.titulo || 'Novo serviço'; }, campos: [{ nome: 'titulo', rotulo: 'Título' }, { nome: 'descricao', rotulo: 'Descrição', tipo: 'text' }] });
+  var HorariosSeguros = listaSegura({ singular: 'Linha de horário', adicionar: 'Adicionar linha de horário', novo: function () { return { dia: '', manha: '', tarde: '', noite: '' }; }, resumo: function (item) { return item.dia || 'Nova linha'; }, campos: [{ nome: 'dia', rotulo: 'Dia' }, { nome: 'manha', rotulo: 'Manhã' }, { nome: 'tarde', rotulo: 'Tarde' }, { nome: 'noite', rotulo: 'Noite' }] });
+  var AgendamentosSeguros = listaSegura({ singular: 'Agendamento', adicionar: 'Adicionar agendamento', novo: function () { return { descricao: '', data: '', arquivo: 'content/site.json', campo: '', valor: '', ativo: true }; }, resumo: function (item) { return item.descricao || 'Novo agendamento'; }, campos: [{ nome: 'descricao', rotulo: 'Descrição da publicação' }, { nome: 'data', rotulo: 'Publicar em (ex.: 2026-09-01T09:00:00Z)' }, { nome: 'arquivo', rotulo: 'Arquivo a alterar', opcoes: ['content/site.json', 'content/agenda.json', 'content/contatos.json', 'content/valores.json', 'content/jogos.json'] }, { nome: 'campo', rotulo: 'Campo a alterar' }, { nome: 'valor', rotulo: 'Novo texto', tipo: 'text' }, { nome: 'ativo', rotulo: 'Ativo', tipo: 'boolean' }] });
+  var NotasSeguras = listaSegura({ singular: 'Nota de publicação', adicionar: 'Adicionar nota', novo: function () { return { data: new Date().toISOString(), descricao: '' }; }, resumo: function (item) { return item.descricao || 'Nova nota'; }, campos: [{ nome: 'data', rotulo: 'Data (ex.: 2026-09-01T09:00:00Z)' }, { nome: 'descricao', rotulo: 'O que foi alterado?', tipo: 'text' }] });
+
   CMS.registerWidget('planos-seguros', PlanosSeguros);
   CMS.registerWidget('jogos-seguros', JogosSeguros);
+  CMS.registerWidget('paragrafos-seguros', ParagrafosSeguros);
+  CMS.registerWidget('servicos-seguros', ServicosSeguros);
+  CMS.registerWidget('horarios-seguros', HorariosSeguros);
+  CMS.registerWidget('agendamentos-seguros', AgendamentosSeguros);
+  CMS.registerWidget('notas-seguras', NotasSeguras);
 })();
