@@ -1,8 +1,65 @@
-{"itens":[
-{"icone":"📖","titulo":"Aula Avulsa","preco":"R$ 80 – 140","periodo":"por aula","itens":["Presencial ou online","Adequado ao perfil do aluno"]},
-{"icone":"🎯","titulo":"Pacote Mensal","preco":"R$ 280 – 380","periodo":"1× por semana","itens":["Presencial ou online","Acompanhamento contínuo","Material e exercícios extras"]},
-{"icone":"✏️","titulo":"Correção de Redação","preco":"R$ 50","periodo":"por redação","itens":["Correção pelas 5 competências do ENEM","Feedback detalhado com comentários","Envio e retorno via WhatsApp"]},
-{"icone":"📝","titulo":"Redação (ENEM/Vestibular)","preco":"R$ 170","periodo":"Correção de 4 redações por mês","itens":["Método completo dissertação argumentativa"]},
-{"icone":"🔬","titulo":"Orientação para Projetos de Iniciação Científica","preco":"R$ 60","periodo":"por sessão","itens":["Iniciação científica Ens. Fund. e Médio","Orientação de projeto e cronograma"]},
-{"icone":"🧠","titulo":"Psicanálise","preco":"R$ 180","periodo":"por sessão","itens":["Escuta ativa e desenvolvimento emocional","Presencial ou online"]}
-]}
+{
+  "itens": [
+    {
+      "icone": "📖",
+      "titulo": "Aula Avulsa",
+      "preco": "R$ 80 – 140",
+      "periodo": "por aula",
+      "itens": [
+        "Presencial ou online",
+        "Adequado ao perfil do aluno"
+      ]
+    },
+    {
+      "icone": "🎯",
+      "titulo": "Pacote Mensal",
+      "preco": "R$ 280 – 380",
+      "periodo": "1× por semana",
+      "itens": [
+        "Presencial ou online",
+        "Acompanhamento contínuo",
+        "Material e exercícios extras"
+      ]
+    },
+    {
+      "icone": "✏️",
+      "titulo": "Correção de Redação",
+      "preco": "R$ 50",
+      "periodo": "por redação",
+      "itens": [
+        "Correção pelas 5 competências do ENEM",
+        "Feedback detalhado com comentários",
+        "Envio e retorno via WhatsApp"
+      ]
+    },
+    {
+      "icone": "📝",
+      "titulo": "Redação (ENEM/Vestibular)",
+      "preco": "R$ 170",
+      "periodo": "Correção de 4 redações por mês",
+      "itens": [
+        "Método completo dissertação argumentativa"
+      ]
+    },
+    {
+      "icone": "🔬",
+      "titulo": "Orientação para Projetos de Iniciação Científica",
+      "preco": "R$ 60",
+      "periodo": "por sessão",
+      "itens": [
+        "Iniciação científica Ens. Fund. e Médio",
+        "Orientação de projeto e cronograma"
+      ]
+    },
+    {
+      "icone": "🧠",
+      "titulo": "Psicanálise",
+      "preco": "R$ 180",
+      "periodo": "por sessão",
+      "itens": [
+        "Escuta ativa e desenvolvimento emocional",
+        "Presencial ou online"
+      ]
+    }
+  ]
+}
