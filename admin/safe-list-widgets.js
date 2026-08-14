@@ -1,5 +1,20 @@
 (function () {
-  function copiar(lista) { return Array.isArray(lista) ? lista.slice() : []; }
+  function normalizar(valor) {
+    if (!valor) return valor;
+    if (typeof valor.toJS === 'function') return valor.toJS();
+    if (typeof valor.toArray === 'function') return valor.toArray().map(normalizar);
+    if (typeof valor.toObject === 'function') {
+      var objeto = valor.toObject();
+      Object.keys(objeto).forEach(function (chave) { objeto[chave] = normalizar(objeto[chave]); });
+      return objeto;
+    }
+    return valor;
+  }
+
+  function copiar(lista) {
+    var normalizada = normalizar(lista);
+    return Array.isArray(normalizada) ? normalizada.slice() : [];
+  }
   function campo(rotulo, valor, aoMudar, tipo) {
     return h('label', { style: { display: 'block', margin: '10px 0 0', fontWeight: '600', fontSize: '13px', color: '#34495e' } },
       rotulo,
