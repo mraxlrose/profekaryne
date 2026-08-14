@@ -41,6 +41,9 @@
   }
 
   document.getElementById('km-backup').addEventListener('click', baixarBackup);
+  document.getElementById('km-discard').addEventListener('click', function () {
+    if (confirm('Descartar as alterações ainda não salvas deste formulário? O último rascunho salvo continuará disponível.')) window.location.reload();
+  });
   verificarPublicacao();
   setInterval(verificarPublicacao, 30000);
 })();

@@ -130,6 +130,8 @@ O botão **Histórico** no topo do painel abre `admin/history.html`. Ele consult
 
 O painel usa `publish_mode: editorial_workflow`: alterações salvas primeiro ficam como rascunho e só chegam à `main` quando a editora as publica. O menu **Rascunhos e agendamentos** permite programar a troca de um campo textual em data/hora definida; o GitHub Actions confere a cada 15 minutos. O menu **Registro de versões** serve para a editora anotar, antes de publicar, o motivo da alteração. No topo há links para o site publicado, histórico, backup JSON e um indicador do status do GitHub Pages.
 
+Os campos de **Valores e planos** e **Jogos educativos** usam widgets próprios definidos em `admin/safe-list-widgets.js`: exclusões pedem confirmação e oferecem **Desfazer** enquanto o formulário está aberto. O botão **Descartar alterações** recarrega o formulário e descarta somente mudanças ainda não salvas; rascunhos já salvos permanecem intactos. Para alterações já publicadas, usar a restauração pelo Histórico.
+
 `admin/preview.js` registra uma prévia customizada no Decap CMS para o arquivo `conteudo-principal`. Ela carrega uma cópia navegável da página inicial em um iframe e aplica os textos ainda não publicados; continua recomendável testar a versão publicada também em desktop/mobile.
 
 ## Imagens, downloads e integrações externas

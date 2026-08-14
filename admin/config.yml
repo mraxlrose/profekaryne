@@ -172,17 +172,7 @@ collections:
         fields:
           - label: Planos
             name: itens
-            widget: list
-            summary: "{{titulo}} — {{preco}}"
-            fields:
-              - { label: Ícone, name: icone, widget: string }
-              - { label: Nome do plano, name: titulo, widget: string }
-              - { label: Preço, name: preco, widget: string }
-              - { label: Período, name: periodo, widget: string }
-              - label: Itens incluídos
-                name: itens
-                widget: list
-                field: { label: Item, name: texto, widget: string }
+            widget: planos-seguros
 
   - name: jogos
     label: Jogos educativos
@@ -194,17 +184,7 @@ collections:
         fields:
           - label: Jogos
             name: itens
-            widget: list
-            summary: "{{titulo}} — {{preco}}"
-            fields:
-              - { label: Emoji, name: emoji, widget: string }
-              - { label: Título, name: titulo, widget: string }
-              - { label: Nível/indicação, name: nivel, widget: string }
-              - { label: Descrição, name: descricao, widget: text }
-              - { label: Texto de preço, name: preco, widget: string }
-              - { label: Link do PDF ou Hotmart, name: link, widget: string, pattern: ['^(https://|/|assets/).+', 'Informe um link completo ou um caminho válido para o PDF.'] }
-              - { label: Texto do botão, name: botao, widget: string }
-              - { label: Selo, name: badge, widget: string }
+            widget: jogos-seguros
 
   - name: agendamentos
     label: Rascunhos e agendamentos
